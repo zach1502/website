@@ -7,6 +7,7 @@ let resumeElement;
 let trueStyleElement = document.getElementById("true-style");
 
 document.onreadystatechange = () => {
+    // Need to wait for iframes to load
     if (document.readyState === 'complete') {
       ReadFile("initial");
       GetElements();
@@ -15,7 +16,7 @@ document.onreadystatechange = () => {
 };
 
 function ReadFile(fileId){
-    let oFrame = document.getElementById(fileId);
+    let oFrame = document.getElementById("initial");
     let strRawContents = oFrame.contentWindow.document.body.childNodes[0].innerHTML;
     while (strRawContents.indexOf("\r") >= 0)
         strRawContents = strRawContents.replace("\r", "");
@@ -31,11 +32,46 @@ function GetElements(){
     trueStyleElement = document.getElementById("true-style");
 }
 
+const normal = 50;
+const fast = 25;
+const ultra = 5;
+
 async function StartAnimation(){
+    let lineCount = 1;
+    while(lineCount <= 24){
+        await WriteLine(lineList.shift(), stylesElement, true, 20);
+        lineCount++;
+    }
+
+    while(lineCount <= 47){
+        await WriteLine(lineList.shift(), stylesElement, true, 5);
+        lineCount++;
+    }
+
+    while(lineCount <= 51){
+        await WriteLine(lineList.shift(), stylesElement, true, 20);
+        lineCount++;
+    }
+
+    while(lineCount <= 60){
+        await WriteLine(lineList.shift(), stylesElement, true, 5);
+        lineCount++;
+    }
+
+    while(lineCount <= 66){
+        await WriteLine(lineList.shift(), stylesElement, true, 20);
+        lineCount++;
+    }
+
+    // Entering into resume section
+    while(lineCount <= 66){
+        await WriteLine(lineList.shift(), resumeElement, false, 5);
+        lineCount++;
+    }
+
     while(lineList.length > 0){
         await WriteLine(lineList.shift(), stylesElement, true, 20);
     }
-
 }
 
 async function WriteLine(line, element, isStyled, delay){
@@ -70,18 +106,23 @@ function WriteStyledChar(element, char, line){
     // update element in body
     styledLineStorage = outputBuffer;
     styledLineStorage = addStylingToStorage(styledLineStorage);
+    
+    // update what the user sees
     element.innerHTML = styledLineStorage;
 
-    // as soon as we hit a space, we use regex and surround relevant chunks with span tags
-    
-    // write into the style tag
-    trueStyleElement.innerHTML = outputBuffer;
+    // when char is not alphanumeric, update the style tag
+    // (Avoids flickers)
+    if(!char.match(/[a-zA-Z0-9]/)){
+        trueStyleElement.innerHTML = outputBuffer;
+        element.innerHTML = styledLineStorage;
+    }
+
 }
 
 const selectComment = /\/\*[^*]*\*+([^/*][^*]*\*+)*\//g;
 const selectNumber = /\d+/g;
-const selectCssProperty = /-(\S+):/g;
-const selectCssValue = /\s\S+;/g;
+const selectCssProperty = / {4}[a-zA-Z-]+:/g;
+const selectCssValue = / .+;/g;
 const selectCssSelector = /[*.a-zA-Z-]+  /g
 
 let isComment = false;
@@ -96,13 +137,13 @@ function addStylingToStorage(styledLineStorage){
         return `<span class="number">${match}</span>`;
     });
 
-    // styledLineStorage = styledLineStorage.replace(selectCssSelector, (match) => {
-    //     return `<span class="selector">${match}</span>`;
+    // styledLineStorage = styledLineStorage.replace(selectCssValue, (match) => {
+    //     return `<span class="value">${match}</span>`;
     // });
 
-    // styledLineStorage = styledLineStorage.replace(selectCssProperty, (match) => {
-    //     return `<span class="property">${match}</span>`;
-    // });
+    styledLineStorage = styledLineStorage.replace(selectCssProperty, (match) => {
+        return `<span class="property">${match}</span>`;
+    });
 
     styledLineStorage = styledLineStorage.replace(selectCssSelector, (match) => {
         return `<span class="selector">${match}</span>`;

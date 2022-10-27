@@ -9,19 +9,21 @@
 /*
  * Oh, Wait... There's nothing here... Crap.
  * Let me fix that.
- * Starting with some animation to keep you entertained.
+ * Starting with setting up some animation to keep you entertained.
  */
 
 *  {
     -webkit-transition: all 1s;
+    transition: all 1s;
 }
 
 /*
  * Lets start with a nice background
  * and some IDE like text
+ * ... Maybe Ill make it a lot more colourful than IDE
  */
 
-body  {
+ body  {
     background-color: #151515;
     color: white;
 }
@@ -32,6 +34,9 @@ body  {
 .comment  {
     color: rgb(224, 127, 0);
 }
+.value  {
+    color: rgb(228, 64, 64);
+}
 .property  {
     color: rgb(72, 196, 231);
 }
@@ -39,6 +44,11 @@ body  {
     color: rgb(147, 147, 251);
 }
 
+/*
+ * Not bad, if I do say so myself.
+ * Now, let me give myself a little more space to work with
+ */
+ 
 .styles  {
     width: 45%;
     float: right;
@@ -48,13 +58,9 @@ body  {
 }
 
 /*
- * Not bad, if I do say so myself.
- */
-
-/*
- * Well, I don't have the resume out yet... But its a start.
- *
+ * I can't imagine that you're here just for the show
+ * and also the fancy animations.
+ * You probably want to know a little more about me.
+ * About some of my work, projects and etc.
+ * Let me prep that up for you real quick.
  */ 
- 
-  
-

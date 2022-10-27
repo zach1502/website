@@ -1,2 +1,60 @@
-/* something else */
+/* 
+ * Hello! I'm Zachary Chan, a 3rd year computer science student at Simon Fraser University.
+ * 
+ * I am a programmer. Currently trying out all sorts of stuff to see what I like.
+ * This is my latest project, a website to showcase my work and projects 
+ * as well as tell you about myself
+ */
+
+/*
+ * Oh, Wait... There's nothing here... Crap.
+ * Let me fix that.
+ * Starting with some animation to keep you entertained.
+ */
+
+*  {
+    -webkit-transition: all 1s;
+}
+
+/*
+ * Lets start with a nice background
+ * and some IDE like text
+ */
+
+body  {
+    background-color: #151515;
+    color: white;
+}
+
+.number  {
+    color: rgb(33, 205, 79);
+}
+.comment  {
+    color: rgb(224, 127, 0);
+}
+.property  {
+    color: rgb(72, 196, 231);
+}
+.selector  {
+    color: rgb(147, 147, 251);
+}
+
+.styles  {
+    width: 45%;
+    float: right;
+}
+.resume  {
+    width: 45%
+}
+
+/*
+ * Not bad, if I do say so myself.
+ */
+
+/*
+ * Well, I don't have the resume out yet... But its a start.
+ *
+ */ 
+ 
+  
 

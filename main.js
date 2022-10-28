@@ -47,33 +47,33 @@ async function StartAnimation(){
         lineCount++;
     }
 
-    while(lineCount <= 55){
+    while(lineCount <= 56){
         await WriteLine(lineList.shift(), stylesElement, true, normal);
         lineCount++;
     }
 
-    while(lineCount <= 77){
+    while(lineCount <= 74){
         await WriteLine(lineList.shift(), stylesElement, true, fast);
         lineCount++;
     }
 
-    while(lineCount <= 84){
+    while(lineCount <= 80){
         await WriteLine(lineList.shift(), stylesElement, true, normal);
         lineCount++;
     }
 
-    while(lineCount <= 103){
+    while(lineCount <= 101){
         await WriteLine(lineList.shift(), stylesElement, true, fast);
         lineCount++;
     }
 
-    while(lineCount <= 114){
+    while(lineCount <= 112){
         await WriteLine(lineList.shift(), stylesElement, true, normal);
         lineCount++;
     }
 
     // Entering into resume section
-    while(lineCount <= 162){
+    while(lineCount <= 160){
         await WriteLine(lineList.shift(), resumeElement, false, fast);
         lineCount++;
     }
@@ -88,7 +88,7 @@ async function WriteLine(line, element, isStyled, delay){
     for(let char of line){
         if(isStyled){
             WriteStyledChar(element, char, line);
-            if(char === '.' || char === ',' || char === '!'){
+            if(char === '.' || char === '!'){
                 await P.delay(500);
             }
             else{

@@ -48,6 +48,32 @@ a:link {color: #fff;}
 a:active {color: #fff;}
 
 /*
+ * Not bad, if I do say so myself.
+ *
+ * It feels like home!
+ * Now, let me give myself a little more space to work with.
+ */
+
+pre:not(:empty)  {
+    color: white;
+    padding: 1em;
+    margin: 1em;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #222;
+    overflow: auto;
+    height: 90%;
+    width: 45%;
+}
+#styles  {
+    transform: translateX(110%);
+    position: absolute;
+}
+#resume  {
+    position: absolute;
+}
+
+/*
  * Let me create a nice background
  * and some IDE like text
  * ... Maybe I'll make it a lot more colourful than an IDE
@@ -58,7 +84,6 @@ body  {
     color: white;
     font-size: 14px;
 }
-
 .number  {
     color: rgb(33, 205, 79);
 }
@@ -73,32 +98,6 @@ body  {
 }
 .selector  {
     color: rgb(147, 147, 251);
-}
-
-/*
- * Not bad, if I do say so myself.
- *
- * It feels like home!
- * Now, let me give myself a little more space to work with.
- */
-
-pre:not(:empty)  {
-    padding: 1em;
-    margin: 1em;
-    border: 1px solid #333;
-    border-radius: 5px;
-    background-color: #222;
-    overflow: auto;
-    height: 90%;
-    width: 45%;
-}
-
-#styles  {
-    transform: translateX(110%);
-    position: absolute;
-}
-#resume  {
-    position: absolute;
 }
 
 /*

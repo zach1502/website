@@ -49,7 +49,7 @@ pre:not(:empty)  {
  * This has probably been bothering you for a while.
  */
 
-nav  {
+ul  {
     list-style: none;
     width: 100%;
     display: inline-block;
@@ -190,3 +190,7 @@ Self-directed investments. Took economics related electives.
  *
  * [END ANIMATION]
  */
+
+#skip {
+    display: none;
+}

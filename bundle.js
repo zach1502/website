@@ -298,9 +298,11 @@ function GetElements(){
     trueStyleElement = document.getElementById("true-style");
 }
 
-const normal = 30;
-const fast = 1;
+const normal = 40;
+const fast = 5;
+const ultra = 0;
 
+// Terrible way to do this, but it works
 async function StartAnimation(){
     let lineCount = 1;
     while(lineCount <= 34){
@@ -318,27 +320,27 @@ async function StartAnimation(){
         lineCount++;
     }
 
-    while(lineCount <= 67){
+    while(lineCount <= 68){
         await WriteLine(lineList.shift(), stylesElement, true, fast);
         lineCount++;
     }
 
-    while(lineCount <= 74){
+    while(lineCount <= 75){
         await WriteLine(lineList.shift(), stylesElement, true, normal);
         lineCount++;
     }
 
-    while(lineCount <= 95){
-        await WriteLine(lineList.shift(), stylesElement, true, fast);
+    while(lineCount <= 96){
+        await WriteLine(lineList.shift(), stylesElement, true, ultra);
         lineCount++;
     }
 
-    while(lineCount <= 107){
+    while(lineCount <= 108){
         await WriteLine(lineList.shift(), stylesElement, true, normal);
         lineCount++;
     }
 
-    while(lineCount <= 115){
+    while(lineCount <= 116){
         await WriteLine(lineList.shift(), stylesElement, true, fast);
         lineCount++;
     }
@@ -346,8 +348,8 @@ async function StartAnimation(){
     P.delay(1000); // wait for the animation to finish
 
     // Entering into resume section
-    while(lineCount <= 163){
-        await WriteLine(lineList.shift(), resumeElement, false, fast);
+    while(lineCount <= 164){
+        await WriteLine(lineList.shift(), resumeElement, false, ultra);
         lineCount++;
     }
 

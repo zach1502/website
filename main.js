@@ -82,7 +82,7 @@ async function StartAnimation(){
     P.delay(1000); // wait for the animation to finish
 
     // Entering into resume section
-    while(lineCount <= 164){
+    while(lineCount <= 174){
         await WriteLine(lineList.shift(), resumeElement, false, ultra);
         lineCount++;
     }

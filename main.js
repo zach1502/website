@@ -37,49 +37,56 @@ const fast = 1;
 
 async function StartAnimation(){
     let lineCount = 1;
-    while(lineCount <= 33){
+    while(lineCount <= 34){
         await WriteLine(lineList.shift(), stylesElement, true, normal);
         lineCount++;
     }
 
-    while(lineCount <= 49){
+    while(lineCount <= 46){
         await WriteLine(lineList.shift(), stylesElement, true, fast);
         lineCount++;
     }
 
-    while(lineCount <= 56){
+    while(lineCount <= 51){
         await WriteLine(lineList.shift(), stylesElement, true, normal);
+        lineCount++;
+    }
+
+    while(lineCount <= 67){
+        await WriteLine(lineList.shift(), stylesElement, true, fast);
         lineCount++;
     }
 
     while(lineCount <= 74){
-        await WriteLine(lineList.shift(), stylesElement, true, fast);
-        lineCount++;
-    }
-
-    while(lineCount <= 80){
         await WriteLine(lineList.shift(), stylesElement, true, normal);
         lineCount++;
     }
 
-    while(lineCount <= 101){
+    while(lineCount <= 95){
         await WriteLine(lineList.shift(), stylesElement, true, fast);
         lineCount++;
     }
 
-    while(lineCount <= 112){
+    while(lineCount <= 107){
         await WriteLine(lineList.shift(), stylesElement, true, normal);
         lineCount++;
     }
+
+    while(lineCount <= 115){
+        await WriteLine(lineList.shift(), stylesElement, true, fast);
+        lineCount++;
+    }
+
+    P.delay(1000); // wait for the animation to finish
 
     // Entering into resume section
-    while(lineCount <= 160){
+    while(lineCount <= 163){
         await WriteLine(lineList.shift(), resumeElement, false, fast);
         lineCount++;
     }
 
     while(lineList.length > 0){
-        await WriteLine(lineList.shift(), resumeElement, false, fast);
+        await WriteLine(lineList.shift(), stylesElement, true, normal);
     }
 }
 
@@ -104,8 +111,10 @@ async function WriteLine(line, element, isStyled, delay){
 
     element.scrollTop = element.scrollHeight;
 
-    outputBuffer += "\n";
-    styledLineStorage += "\n";
+    if(isStyled){
+        outputBuffer += '\n';
+        styledLineStorage += '\n';
+    }
     element.innerHTML += "<br>";
 }
 

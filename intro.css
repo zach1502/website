@@ -13,7 +13,7 @@
  * Oh. There's nothing here you say?                 
  * Let me fix that.
  * 
- * Starting with setting up some animation to keep you entertained.
+ * First, lets animate EVERYTHING!
  */
 
 *  {
@@ -22,9 +22,27 @@
 }
 
 /*
- * This is just a start...
- * The real show begins now! ~
+ * Where's the animation?
+ * You will see... :)
  */
+
+/*
+ * Let me create some space to work with.
+ *
+ * AND I SAY, "LET THERE BE A GRAY BOX AND WHITE TEXT!"
+ */
+
+pre:not(:empty)  {
+    padding: 1em;
+    margin: 1em;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #222;
+    color: white;
+    overflow: auto;
+    height: 90%;
+    width: 45%;
+}
 
 /*
  * Let me fix this footer.
@@ -38,6 +56,7 @@ ul  {
 }
 
 li  {
+    font-family: monospace, serif;
     display: inline;
     padding: 0px 10px;
 }
@@ -49,34 +68,9 @@ a:active  {color: #fff;}
 
 /*
  * Not bad, if I do say so myself.
- *
- * It feels like home!
- * Now, let me give myself a little more space to work with.
- */
-
-pre:not(:empty)  {
-    color: white;
-    padding: 1em;
-    margin: 1em;
-    border: 1px solid #333;
-    border-radius: 5px;
-    background-color: #222;
-    overflow: auto;
-    height: 90%;
-    width: 45%;
-}
-#styles  {
-    transform: translateX(110%);
-    position: absolute;
-}
-#resume  {
-    position: absolute;
-}
-
-/*
- * Let me create a nice background
- * and some IDE like text
- * ... Maybe I'll make it a lot more colourful than an IDE
+ * But it feels a bit bland and empty. Doesn't it?
+ * Let me add some color. How about something IDE like?
+ * ... Maybe a lot more colourful than an IDE ...
  */
 
 body  {
@@ -109,7 +103,16 @@ body  {
  * 
  * Oh and just in case you didn't notice..
  * The link to my FULL resume is in the bar at the bottom left.
- */ 
+ * note: it has some info redacted for privacy reasons.
+ */
+
+#styles  {
+    transform: translateX(110%);
+    position: absolute;
+}
+#resume  {
+    position: absolute;
+}
 
 Zachary Chan
 3rd year Computer Science Student at Simon Fraser University (SFU)
@@ -159,3 +162,20 @@ Chess
 Finance
 Self-directed investments. Took economics related electives.
 
+/*
+ * [END ANIMATION]
+ * I hope you enjoyed my website.
+ *
+ * If you have any questions, comments or concerns, feel free to contact me.
+ *
+ * Contact me at:
+ * Discord: zach1502#4621
+ * Email: zca121@sfu.ca
+ * 
+ * I'm always looking for new opportunities to learn and grow.
+ * 
+ * Thank you for your time and I hope you are impressed!
+ * 
+ * Thank you!
+ * - Zachary Chan
+ */

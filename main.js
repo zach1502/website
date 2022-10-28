@@ -16,7 +16,7 @@ document.onreadystatechange = () => {
 };
 
 function ReadFile(fileId){
-    let oFrame = document.getElementById("initial");
+    let oFrame = document.getElementById(fileId);
     let strRawContents = oFrame.contentWindow.document.body.childNodes[0].innerHTML;
     while (strRawContents.indexOf("\r") >= 0)
         strRawContents = strRawContents.replace("\r", "");
@@ -32,45 +32,45 @@ function GetElements(){
     trueStyleElement = document.getElementById("true-style");
 }
 
-const normal = 50;
-const fast = 25;
-const ultra = 5;
+const normal = 0;
+const fast = 0;
+const ultra = 0;
 
 async function StartAnimation(){
     let lineCount = 1;
-    while(lineCount <= 24){
-        await WriteLine(lineList.shift(), stylesElement, true, 20);
+    while(lineCount <= 25){
+        await WriteLine(lineList.shift(), stylesElement, true, normal);
         lineCount++;
     }
 
     while(lineCount <= 47){
-        await WriteLine(lineList.shift(), stylesElement, true, 5);
+        await WriteLine(lineList.shift(), stylesElement, true, fast);
         lineCount++;
     }
 
-    while(lineCount <= 51){
-        await WriteLine(lineList.shift(), stylesElement, true, 20);
+    while(lineCount <= 54){
+        await WriteLine(lineList.shift(), stylesElement, true, normal);
         lineCount++;
     }
 
-    while(lineCount <= 60){
-        await WriteLine(lineList.shift(), stylesElement, true, 5);
+    while(lineCount <= 73){
+        await WriteLine(lineList.shift(), stylesElement, true, fast);
         lineCount++;
     }
 
-    while(lineCount <= 66){
-        await WriteLine(lineList.shift(), stylesElement, true, 20);
+    while(lineCount <= 84){
+        await WriteLine(lineList.shift(), stylesElement, true, normal);
         lineCount++;
     }
 
     // Entering into resume section
-    while(lineCount <= 66){
-        await WriteLine(lineList.shift(), resumeElement, false, 5);
+    while(lineCount <= 131){
+        await WriteLine(lineList.shift(), resumeElement, false, ultra);
         lineCount++;
     }
 
     while(lineList.length > 0){
-        await WriteLine(lineList.shift(), stylesElement, true, 20);
+        await WriteLine(lineList.shift(), resumeElement, false, fast);
     }
 }
 
@@ -85,14 +85,19 @@ async function WriteLine(line, element, isStyled, delay){
         }
         await P.delay(delay);
     }
+    // window.scrollTo(0, document.body.scrollHeight);
+
+    element.scrollTop = element.scrollHeight;
+
     outputBuffer += "\n";
     styledLineStorage += "\n";
     element.innerHTML += "<br>";
 }
 
-async function WriteSimpleChar(element, char){
+function WriteSimpleChar(element, char){
     element.innerHTML += char;
 }
+
 
 let styledLineStorage = ""; // insert into body
 let outputBuffer = ""; // insert to style tag

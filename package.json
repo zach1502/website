@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "browserify main.js -o bundle.js && http-server"
+    "test": "browserify main.js -o bundle.js && http-server -c -1"
   },
   "author": "",
   "license": "ISC",

@@ -143,7 +143,7 @@ const selectComment = /\/\*[^*]*\*+([^/*][^*]*\*+)*\//g;
 const selectNumber = /\d+/g;
 const selectCssProperty = / {4}[a-zA-Z-]+:/g;
 const selectCssValue = / .+;/g;
-const selectCssSelector = /[*.a-zA-Z-]+  /g
+const selectCssSelector = /[*#:\(\).a-zA-Z-]+  /g
 
 function addStylingToStorage(styledLineStorage){
 

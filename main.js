@@ -32,39 +32,38 @@ function GetElements(){
     trueStyleElement = document.getElementById("true-style");
 }
 
-const normal = 0;
-const fast = 0;
-const ultra = 0;
+const normal = 50;
+const fast = 5;
 
 async function StartAnimation(){
     let lineCount = 1;
-    while(lineCount <= 25){
+    while(lineCount <= 37){
         await WriteLine(lineList.shift(), stylesElement, true, normal);
         lineCount++;
     }
 
-    while(lineCount <= 47){
+    while(lineCount <= 59){
         await WriteLine(lineList.shift(), stylesElement, true, fast);
         lineCount++;
     }
 
-    while(lineCount <= 54){
+    while(lineCount <= 66){
         await WriteLine(lineList.shift(), stylesElement, true, normal);
         lineCount++;
     }
 
-    while(lineCount <= 73){
+    while(lineCount <= 85){
         await WriteLine(lineList.shift(), stylesElement, true, fast);
         lineCount++;
     }
 
-    while(lineCount <= 84){
+    while(lineCount <= 96){
         await WriteLine(lineList.shift(), stylesElement, true, normal);
         lineCount++;
     }
 
     // Entering into resume section
-    while(lineCount <= 131){
+    while(lineCount <= 143){
         await WriteLine(lineList.shift(), resumeElement, false, ultra);
         lineCount++;
     }
@@ -111,6 +110,11 @@ function WriteStyledChar(element, char, line){
     // update element in body
     styledLineStorage = outputBuffer;
     styledLineStorage = addStylingToStorage(styledLineStorage);
+
+    if(char === '.' || char === ',' || char === '!'){
+        // delay for a moment for pause
+        P.delay(250);
+    }
     
     // update what the user sees
     element.innerHTML = styledLineStorage;

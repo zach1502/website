@@ -1,14 +1,18 @@
 /* 
- * Hello! I'm Zachary Chan, a 3rd year computer science student at Simon Fraser University.
+ * Hello! I'm Zachary Chan.
+ * A 3rd year computer science student at Simon Fraser University.
+ * I am seeking for my first Co-op term.
  * 
- * I am a programmer. Currently trying out all sorts of stuff to see what I like.
- * This is my latest project, a website to showcase my work and projects 
- * as well as tell you about myself
+ * I'm a programmer. 
+ * Currently, I'm trying out all sorts of stuff to see what I like.
+ * This is my latest project, a website to showcase my work and projects.
+ * as well as tell you about myself, and impress you as much as I can.
  */
 
 /*
- * Oh, Wait... There's nothing here... Crap.
+ * Oh. There's nothing here you say?                 
  * Let me fix that.
+ * 
  * Starting with setting up some animation to keep you entertained.
  */
 
@@ -18,9 +22,17 @@
 }
 
 /*
- * Lets start with a nice background
+ * This is just a start.
+ */
+
+/* 
+ * Now the real show is going to start!
+ */
+
+/*
+ * Let me create a nice background
  * and some IDE like text
- * ... Maybe I'll make it a lot more colourful than IDE
+ * ... Maybe I'll make it a lot more colourful than an IDE
  */
 
 body  {
@@ -49,7 +61,7 @@ body  {
  * Not bad, if I do say so myself.
  *
  * It feels like home!
- * Now, let me give myself a little more space to work with
+ * Now, let me give myself a little more space to work with.
  */
 
 pre:not(:empty)  {
@@ -72,8 +84,8 @@ pre:not(:empty)  {
 }
 
 /*
- * I can't imagine that you're here just for the show
- * and also the fancy animations.
+ * I can't imagine that you're here just for the fancy animations.
+ *
  * You probably want to know a little more about me.
  * About some of my work, projects and etc.
  * Let me prep a TL;DR of my resume for you.
@@ -129,3 +141,4 @@ Chess
 
 Finance
 Self-directed investments. Took economics related electives.
+

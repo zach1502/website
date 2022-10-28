@@ -22,12 +22,30 @@
 }
 
 /*
- * This is just a start.
+ * This is just a start...
+ * The real show begins now! ~
  */
 
-/* 
- * Now the real show is going to start!
+/*
+ * Let me fix this footer.
+ * This has probably been bothering you for a while.
  */
+
+ul  {
+    list-style: none;
+    width: 100%;
+    display: inline-block;
+}
+
+li  {
+    display: inline;
+    padding: 0px 10px;
+}
+
+a:hover  {color: #888;}
+a:visited {color: #fff;}
+a:link {color: #fff;}
+a:active {color: #fff;}
 
 /*
  * Let me create a nice background

@@ -298,40 +298,49 @@ function GetElements(){
     trueStyleElement = document.getElementById("true-style");
 }
 
-const normal = 50;
-const fast = 20;
-const ultra = 1;
+const normal = 30;
+const fast = 1;
 
 async function StartAnimation(){
     let lineCount = 1;
-    while(lineCount <= 37){
+    while(lineCount <= 33){
         await WriteLine(lineList.shift(), stylesElement, true, normal);
         lineCount++;
     }
 
-    while(lineCount <= 59){
+    while(lineCount <= 49){
         await WriteLine(lineList.shift(), stylesElement, true, fast);
         lineCount++;
     }
 
-    while(lineCount <= 66){
+    while(lineCount <= 55){
         await WriteLine(lineList.shift(), stylesElement, true, normal);
         lineCount++;
     }
 
-    while(lineCount <= 85){
+    while(lineCount <= 77){
         await WriteLine(lineList.shift(), stylesElement, true, fast);
         lineCount++;
     }
 
-    while(lineCount <= 96){
+    while(lineCount <= 84){
+        await WriteLine(lineList.shift(), stylesElement, true, normal);
+        lineCount++;
+    }
+
+    while(lineCount <= 103){
+        await WriteLine(lineList.shift(), stylesElement, true, fast);
+        lineCount++;
+    }
+
+    while(lineCount <= 114){
         await WriteLine(lineList.shift(), stylesElement, true, normal);
         lineCount++;
     }
 
     // Entering into resume section
-    while(lineCount <= 143){
-        await WriteLine(lineList.shift(), resumeElement, false, ultra);
+    while(lineCount <= 162){
+        await WriteLine(lineList.shift(), resumeElement, false, fast);
         lineCount++;
     }
 
@@ -345,13 +354,19 @@ async function WriteLine(line, element, isStyled, delay){
     for(let char of line){
         if(isStyled){
             WriteStyledChar(element, char, line);
+            if(char === '.' || char === ',' || char === '!'){
+                await P.delay(500);
+            }
+            else{
+                await P.delay(delay);
+            }
         }
         else{
             WriteSimpleChar(element, char);
+            await P.delay(delay);
         }
-        await P.delay(delay);
     }
-    // window.scrollTo(0, document.body.scrollHeight);
+    window.scrollTo(0, document.body.scrollHeight);
 
     element.scrollTop = element.scrollHeight;
 
@@ -368,7 +383,7 @@ function WriteSimpleChar(element, char){
 let styledLineStorage = ""; // insert into body
 let outputBuffer = ""; // insert to style tag
 
-function WriteStyledChar(element, char, line){
+async function WriteStyledChar(element, char, line){
 
     // add char to storages
     styledLineStorage += char;
@@ -377,11 +392,6 @@ function WriteStyledChar(element, char, line){
     // update element in body
     styledLineStorage = outputBuffer;
     styledLineStorage = addStylingToStorage(styledLineStorage);
-
-    if(char === '.' || char === ',' || char === '!'){
-        // delay for a moment for pause
-        P.delay(150);
-    }
     
     // update what the user sees
     element.innerHTML = styledLineStorage;
@@ -400,8 +410,6 @@ const selectNumber = /\d+/g;
 const selectCssProperty = / {4}[a-zA-Z-]+:/g;
 const selectCssValue = / .+;/g;
 const selectCssSelector = /[*.a-zA-Z-]+  /g
-
-let isComment = false;
 
 function addStylingToStorage(styledLineStorage){
 

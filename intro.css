@@ -10,12 +10,14 @@
  * FOR THE BEST EXPERIENCE, VIEW ON DESKTOP, FULL SCREENED
  */
 
+; DELAY 1000
 /*
  * Oh... There's nothing here...                
  * Let me fix that.
  * 
  * First, lets animate EVERYTHING!
  */
+; DELAY 1000
 
 *  {
     -webkit-transition: all 1s;
@@ -26,6 +28,7 @@
  * Where's the animation?
  * You will see... :)
  */
+; DELAY 1000
 
 /*
  * Let me create some space to work with.
@@ -42,11 +45,12 @@ pre:not(:empty)  {
     background-color: #222;
     color: white;
     overflow: auto;
+    padding-bottom: 2em;
 }
 
 @media only screen and (min-width:769px){
     pre:not(:empty)  {
-        height: 90%;
+        height: 85%;
         width: 45%;
     }
 }
@@ -63,12 +67,14 @@ pre:not(:empty)  {
     position: absolute;
 }
 ; styles true 2
+; DELAY 1000
 
 /*
  * Let me fix this footer.
  * This has probably been bothering you for a while.
  */
 ; styles true 0
+; DELAY 1000
 
 ul  {
     list-style: none;
@@ -88,6 +94,7 @@ a:visited  {color: #fff;}
 a:link  {color: #fff;}
 a:active  {color: #fff;}
 ; styles true 2
+; DELAY 1000
 
 /*
  * Not bad, if I do say so myself.
@@ -96,6 +103,7 @@ a:active  {color: #fff;}
  * ... Maybe a lot more colourful than an IDE ...
  */
 ; styles true 0
+; DELAY 1000
 
 body  {
     background-color: #151515;
@@ -118,6 +126,7 @@ body  {
     color: rgb(147, 147, 251);
 }
 ; styles true 2
+; DELAY 1000
 
 /*
  * I can't imagine that you're here just for the fancy colours.
@@ -130,7 +139,9 @@ body  {
  * The link to a version of my resume is at the bottom left.
  * 
  */
+; DELAY 1000
 ; styles true 1
+
 @media only screen and (min-width:769px){
     #styles  {
         transform: translateX(110%);
@@ -210,6 +221,7 @@ Chess
 Finance
 Self-directed investments. Took economics related electives.
 ; styles true 2
+; DELAY 1000
 
 /*
  * I hope you enjoyed my website.

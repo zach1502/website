@@ -6,7 +6,8 @@
  * I'm a programmer. 
  * Currently, I'm trying out all sorts of stuff to see what I like.
  * This is my latest project, a website.
- * For the best experience, view on a desktop, full screen.
+ *
+ * FOR THE BEST EXPERIENCE, VIEW ON DESKTOP, FULL SCREENED
  */
 
 /*
@@ -41,8 +42,21 @@ pre:not(:empty)  {
     background-color: #222;
     color: white;
     overflow: auto;
-    height: 90%;
-    width: 45%;
+}
+
+@media only screen and (min-width:769px){
+    pre:not(:empty)  {
+        height: 90%;
+        width: 45%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    pre:not(:empty) {
+        width: 95%;
+        height: 40%;
+        position: absolute;
+    }
 }
 
 #styles  {
@@ -60,6 +74,7 @@ ul  {
     list-style: none;
     width: 100%;
     display: inline-block;
+    overflow: auto;
 }
 
 li  {
@@ -116,14 +131,25 @@ body  {
  * 
  */
 ; styles true 1
+@media only screen and (min-width:769px){
+    #styles  {
+        transform: translateX(110%);
+    }
+    #resume  {
+        position: absolute;
+    }
+}
 
-#styles  {
-    transform: translateX(110%);
+@media only screen and (max-width: 768px) {
+    #resume  {
+        transform: translateX(0%);
+    }
+    #styles  {
+        transform: translateX(0%);
+        bottom: 0;
+    }
 }
-#resume  {
-    position: absolute;
-}
-; DELAY 1200
+; DELAY 1500
 ; resume false 0
 
 ===================

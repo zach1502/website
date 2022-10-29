@@ -319,7 +319,7 @@ function ReadFile(fileId){
     let arrLines = strRawContents.split("\n");
     
     lineList = lineList.concat(arrLines);
-    console.log(lineList);
+    // console.log(lineList);
 }
 
 function GetElements(){

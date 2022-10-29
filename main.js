@@ -2,18 +2,43 @@ const P = require('bluebird');
 
 let lineList = [];
 
+// Element references
 let stylesElement;
 let resumeElement;
 let trueStyleElement = document.getElementById("true-style");
+
+// Writing Delays
+const isDev = window.location.hostname === '127.0.0.1';
+const normal = (isDev) ? 0 : 40;
+const fast = (isDev) ? 0 : 5;
+const ultra = 0;
+
+// Storages
+let styledLineStorage = ""; // insert into body
+let outputBuffer = ""; // insert to style tag
+
+// REGEX Matches
+const selectComment = /\/\*[^*]*\*+([^/*][^*]*\*+)*\//g;
+const selectNumber = /\d+/g;
+const selectCssProperty = / {4}[a-zA-Z-]+:/g;
+const selectCssValue = / .+;/g;
+const selectCssSelector = /[*#:\(\).a-zA-Z-]+  /g
 
 document.onreadystatechange = () => {
     // Need to wait for iframes to load
     if (document.readyState === 'complete') {
       ReadFile("initial");
       GetElements();
+      AddEventListeners();
       StartAnimation();
     }
 };
+
+function AddEventListeners(){
+    stylesElement.addEventListener('input', function() {
+        trueStyleElement.innerHTML = stylesElement.textContent;
+    });
+}
 
 function ReadFile(fileId){
     let oFrame = document.getElementById(fileId);
@@ -32,12 +57,9 @@ function GetElements(){
     trueStyleElement = document.getElementById("true-style");
 }
 
-const normal = 40;
-const fast = 5;
-const ultra = 0;
-
 // Terrible way to do this, but it works
 async function StartAnimation(){
+
     let lineCount = 1;
     while(lineCount <= 34){
         await WriteLine(lineList.shift(), stylesElement, true, normal);
@@ -124,10 +146,6 @@ function WriteSimpleChar(element, char){
     element.innerHTML += char;
 }
 
-
-let styledLineStorage = ""; // insert into body
-let outputBuffer = ""; // insert to style tag
-
 async function WriteStyledChar(element, char, line){
 
     // add char to storages
@@ -149,12 +167,6 @@ async function WriteStyledChar(element, char, line){
     }
 
 }
-
-const selectComment = /\/\*[^*]*\*+([^/*][^*]*\*+)*\//g;
-const selectNumber = /\d+/g;
-const selectCssProperty = / {4}[a-zA-Z-]+:/g;
-const selectCssValue = / .+;/g;
-const selectCssSelector = /[*#:\(\).a-zA-Z-]+  /g
 
 function addStylingToStorage(styledLineStorage){
 

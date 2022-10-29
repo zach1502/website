@@ -1,10 +1,7 @@
+<!DOCTYPE html>
 <html lang="en"><head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A resume site that built itself in front of you">
-    <meta name="keywords" content="resume, co-op, build, site, zach">
-    <meta name="author" content="Zachary Chan">
-    <title> Zachary Chan | Animation Skipped </title>
+    <title> Zachary Chan | Resume </title>
     <style id="true-style">/* 
 * Hello! I'm Zachary Chan.
 * A 3rd year computer science student at Simon Fraser University.
@@ -49,6 +46,10 @@ color: white;
 overflow: auto;
 height: 90%;
 width: 45%;
+}
+
+#styles  {
+position: absolute;
 }
 
 /*
@@ -115,7 +116,6 @@ color: rgb(147, 147, 251);
 
 #styles  {
 transform: translateX(110%);
-position: absolute;
 }
 #resume  {
 position: absolute;
@@ -127,8 +127,8 @@ position: absolute;
 * If you have any questions, comments or concerns, feel free to contact me.
 *
 * Contact me at:
-* Discord: zach1502#4621
 * Email: zca121@sfu.ca
+* Discord: zach1502#4621
 * 
 * I'm always looking for new opportunities to learn and grow.
 * 
@@ -138,7 +138,15 @@ position: absolute;
 * - Zachary Chan
 *
 * [END ANIMATION]
-*/</style>
+*/
+
+#skip {
+display: none;
+}</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A resume site that builds itself in front of you">
+    <meta name="keywords" content="resume, co-op, build, site, zach">
+    <meta name="author" content="Zachary Chan">
 </head>
 <body>
     <iframe id="initial" title="" src="intro.css" style="display: none;"></iframe>
@@ -187,6 +195,10 @@ position: absolute;
 <span class="property">    overflow:</span> auto;
 <span class="property">    height:</span> <span class="number">90</span>%;
 <span class="property">    width:</span> <span class="number">45</span>%;
+}
+
+<span class="selector">#styles  </span>{
+<span class="property">    position:</span> absolute;
 }
 
 <span class="comment">/*
@@ -253,7 +265,6 @@ position: absolute;
 
 <span class="selector">#styles  </span>{
 <span class="property">    transform:</span> translateX(<span class="number">110</span>%);
-<span class="property">    position:</span> absolute;
 }
 <span class="selector">#resume  </span>{
 <span class="property">    position:</span> absolute;
@@ -265,8 +276,8 @@ position: absolute;
 * If you have any questions, comments or concerns, feel free to contact me.
 *
 * Contact me at:
-* Discord: zach<span class="number">1502</span>#<span class="number">4621</span>
 * Email: zca<span class="number">121</span>@sfu.ca
+* Discord: zach<span class="number">1502</span>#<span class="number">4621</span>
 * 
 * I'm always looking for new opportunities to learn and grow.
 * 
@@ -276,7 +287,11 @@ position: absolute;
 * - Zachary Chan
 *
 * [END ANIMATION]
-*/</span><br></pre>
+*/</span>
+
+#skip {
+<span class="property">    display:</span> none;
+}<br></pre>
         <pre id="resume">===================<br>Zachary Chan<br>===================<br>3rd year Computer Science Student at Simon Fraser University (SFU)<br>Seeking for 1st Co-op Term in Spring 2022<br><br>===================<br>Skills:<br>===================<br>Programming Languages: C/C++, Python, JavaScript, HTML, CSS, C#, RISC-V<br>Software: Visual Studio Code, Git, Unity, GoogleTest, Microsoft Office Suite<br>Human Languages: English, French, Mandarin<br>General: Creative, Fast learner, Communicative, Curious<br><br>===================<br>Personal Projects:<br>===================<br>This Website (JavaScript, HTML, CSS)<br>October 2022 - Present<br><br>Automatic UPass Registration (Python)<br>August 2022 - Present<br><br>Chess Engine Tournament (JavaScript and C++)<br>June 2022 - Sept 2022<br><br>Chess With Friends Discord Bot (JavaScript)<br>June 2022 - Sept 2022<br><br>Automated Crossword Puzzle Generator (Python)<br>May 2022 - June 2022<br><br>===================<br>Education:<br>===================<br>B.Sc Computer Science<br>Simon Fraser University<br>2022 - 2026<br>3.56/4.33 CGPA<br><br>Associate of Computer Science (Transferred)<br>Langara College<br>2020 - 2022<br>3.87/4.33 CGPA<br><br>===================<br>Interests:<br>===================<br>Programming<br>Participated in "A Strange Programming Competition"<br>Participated in "Fall Hacks 2022"<br><br>Chess<br>1900 Rapid, 1600 Blitz, 1150 Bullet, 2150 Puzzle on chess.com.<br><br>Finance<br>Self-directed investments. Took economics related electives.<br><br></pre>
     </div>
 
@@ -292,8 +307,9 @@ position: absolute;
             <a href="https://github.com/zach1502/"> GitHub </a>
         </li>
         <li>
-            <a href="./index.html"> Play Animation </a>
+            <a href="./skipped.html" id="skip"> Skip Animation? </a>
         </li>
     </ul>
 </footer>
+<script type="module" src="bundle.js"></script>
 </body></html>

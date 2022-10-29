@@ -273,11 +273,12 @@ let stylesElement;
 let resumeElement;
 let trueStyleElement = document.getElementById("true-style");
 
-// Writing Delays
+// Writing Delays in ms
 const isDev = window.location.hostname !== '127.0.0.1';
 const normal = (isDev) ? 0 : 40;
 const fast = (isDev) ? 0 : 5;
 const ultra = 0;
+const speechPause = 500;
 
 // Storages
 let styledLineStorage = ""; // insert into body
@@ -331,7 +332,7 @@ function InitializeState(){
     state = {
         element: stylesElement,
         isStyled: true,
-        delay: 0,
+        delay: normal,
     }
 }
 
@@ -343,7 +344,7 @@ async function StartAnimation(){
 }
 
 async function WriteLine(line){
-    if(ChangeFormat(line)){
+    if(CheckIfSpecialCommand(line)){
         return;
     }
 
@@ -352,7 +353,7 @@ async function WriteLine(line){
         if(state.isStyled){
             WriteStyledChar(char);
             if(char === '.' || char === '!'){
-                await P.delay(500);
+                await P.delay(speechPause);
             }
             else{
                 await P.delay(state.delay);
@@ -374,47 +375,52 @@ async function WriteLine(line){
     state.element.innerHTML += "<br>";
 }
 
-function ChangeFormat(line){
-    // checks if a line starts with <<<
+function CheckIfSpecialCommand(line){
+    // checks if a line starts with ;
     if(line[0]==';'){
         // change the state
         let lineParts = line.split(" ");
-        // lineParts[0] = "<<<"
-        // lineParts[1] = elementID
-        // lineParts[2] = isStyled
-        // lineParts[3] = delay
-
-        // OR
-
-        // lineParts[1] = "DELAY"
-        // lineParts[2] = delayDuration in ms
         
-        if(lineParts[1] === "DELAY"){
-            P.delay(parseInt(lineParts[2]));
-            return true;
+        if(CheckIfDelayCommand(lineParts[1])){
+            HandleDelayCommand(parseInt(lineParts[2]));
+        }
+        else{
+            // styling command
+            HandleStylingCommand(lineParts);
         }
 
-        state.element = document.getElementById(lineParts[1]);
-        state.isStyled = (lineParts[2] === "true" || lineParts[2] === "t");
-
-        switch(parseInt(lineParts[3])){
-            case 0:
-                state.delay = ultra;
-                break;
-            case 1:
-                state.delay = fast;
-                break;
-            case 2:
-                state.delay = normal;
-                break;
-            default:
-                state.delay = normal;
-                break;
-        }
         return true;
     }
 
     return false;
+}
+
+function CheckIfDelayCommand(command){
+    return command === "DELAY";
+}
+
+function HandleDelayCommand(delayDuration) {
+    P.delay(parseInt(delayDuration));
+}
+
+function HandleStylingCommand(lineParts) {
+    state.element = document.getElementById(lineParts[1]);
+    state.isStyled = (lineParts[2] === "true" || lineParts[2] === "t");
+
+    switch(parseInt(lineParts[3])){
+        case 0:
+            state.delay = ultra;
+            break;
+        case 1:
+            state.delay = fast;
+            break;
+        case 2:
+            state.delay = normal;
+            break;
+        default:
+            state.delay = normal;
+            break;
+    }
 }
 
 function WriteSimpleChar(char){

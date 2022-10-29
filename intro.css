@@ -31,7 +31,7 @@
  *
  * AND I SAY, "LET THERE BE A GRAY BOX AND WHITE TEXT!"
  */
-
+; styles true 1
 pre:not(:empty)  {
     padding: 1em;
     margin: 1em;
@@ -47,12 +47,12 @@ pre:not(:empty)  {
 #styles  {
     position: absolute;
 }
-
+; styles true 2
 /*
  * Let me fix this footer.
  * This has probably been bothering you for a while.
  */
-
+; styles true 0
 ul  {
     list-style: none;
     width: 100%;
@@ -69,14 +69,14 @@ a:hover  {color: #888;}
 a:visited  {color: #fff;}
 a:link  {color: #fff;}
 a:active  {color: #fff;}
-
+; styles true 2
 /*
  * Not bad, if I do say so myself.
  * But it feels a bit bland and empty. Doesn't it?
  * Let me add some color. How about something IDE like?
  * ... Maybe a lot more colourful than an IDE ...
  */
-
+; styles true 0
 body  {
     background-color: #151515;
     color: white;
@@ -97,7 +97,7 @@ body  {
 .selector  {
     color: rgb(147, 147, 251);
 }
-
+; styles true 2
 /*
  * I can't imagine that you're here just for the fancy colours.
  *
@@ -109,14 +109,15 @@ body  {
  * The link to a version of my resume is at the bottom left.
  * 
  */
-
+; styles true 1
 #styles  {
     transform: translateX(110%);
 }
 #resume  {
     position: absolute;
 }
-
+; DELAY 1000
+; resume false 0
 ===================
 Zachary Chan
 ===================
@@ -174,7 +175,7 @@ Chess
 
 Finance
 Self-directed investments. Took economics related electives.
-
+; styles true 2
 /*
  * I hope you enjoyed my website.
  *

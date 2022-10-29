@@ -274,7 +274,7 @@ let resumeElement;
 let trueStyleElement = document.getElementById("true-style");
 
 // Writing Delays
-const isDev = window.location.hostname === '127.0.0.1';
+const isDev = window.location.hostname !== '127.0.0.1';
 const normal = (isDev) ? 0 : 40;
 const fast = (isDev) ? 0 : 5;
 const ultra = 0;
@@ -290,12 +290,16 @@ const selectCssProperty = / {4}[a-zA-Z-]+:/g;
 const selectCssValue = / .+;/g;
 const selectCssSelector = /[*#:\(\).a-zA-Z-]+  /g
 
+// State
+let state;
+
 document.onreadystatechange = () => {
     // Need to wait for iframes to load
     if (document.readyState === 'complete') {
       ReadFile("initial");
       GetElements();
       AddEventListeners();
+      InitializeState();
       StartAnimation();
     }
 };
@@ -323,96 +327,101 @@ function GetElements(){
     trueStyleElement = document.getElementById("true-style");
 }
 
-// Terrible way to do this, but it works
-async function StartAnimation(){
-
-    let lineCount = 1;
-    while(lineCount <= 34){
-        await WriteLine(lineList.shift(), stylesElement, true, normal);
-        lineCount++;
-    }
-
-    while(lineCount <= 50){
-        await WriteLine(lineList.shift(), stylesElement, true, fast);
-        lineCount++;
-    }
-
-    while(lineCount <= 55){
-        await WriteLine(lineList.shift(), stylesElement, true, normal);
-        lineCount++;
-    }
-
-    while(lineCount <= 72){
-        await WriteLine(lineList.shift(), stylesElement, true, fast);
-        lineCount++;
-    }
-
-    while(lineCount <= 79){
-        await WriteLine(lineList.shift(), stylesElement, true, normal);
-        lineCount++;
-    }
-
-    while(lineCount <= 100){
-        await WriteLine(lineList.shift(), stylesElement, true, ultra);
-        lineCount++;
-    }
-
-    while(lineCount <= 112){
-        await WriteLine(lineList.shift(), stylesElement, true, normal);
-        lineCount++;
-    }
-
-    while(lineCount <= 119){
-        await WriteLine(lineList.shift(), stylesElement, true, fast);
-        lineCount++;
-    }
-
-    P.delay(1000); // wait for the animation to finish
-
-    // Entering into resume section
-    while(lineCount <= 177){
-        await WriteLine(lineList.shift(), resumeElement, false, ultra);
-        lineCount++;
-    }
-
-    while(lineList.length > 0){
-        await WriteLine(lineList.shift(), stylesElement, true, normal);
+function InitializeState(){
+    state = {
+        element: stylesElement,
+        isStyled: true,
+        delay: 0,
     }
 }
 
-async function WriteLine(line, element, isStyled, delay){
+// Terrible way to do this, but it works
+async function StartAnimation(){
+    while(lineList.length > 0){
+        await WriteLine(lineList.shift());
+    }
+}
+
+async function WriteLine(line){
+    if(ChangeFormat(line)){
+        return;
+    }
+
     // for each character in line
     for(let char of line){
-        if(isStyled){
-            WriteStyledChar(element, char, line);
+        if(state.isStyled){
+            WriteStyledChar(char);
             if(char === '.' || char === '!'){
                 await P.delay(500);
             }
             else{
-                await P.delay(delay);
+                await P.delay(state.delay);
             }
         }
         else{
-            WriteSimpleChar(element, char);
-            await P.delay(delay);
+            WriteSimpleChar(char);
+            await P.delay(state.delay);
         }
     }
     window.scrollTo(0, document.body.scrollHeight);
 
-    element.scrollTop = element.scrollHeight;
+    state.element.scrollTop = state.element.scrollHeight;
 
-    if(isStyled){
+    if(state.isStyled){
         outputBuffer += '\n';
         styledLineStorage += '\n';
     }
-    element.innerHTML += "<br>";
+    state.element.innerHTML += "<br>";
 }
 
-function WriteSimpleChar(element, char){
-    element.innerHTML += char;
+function ChangeFormat(line){
+    // checks if a line starts with <<<
+    if(line[0]==';'){
+        // change the state
+        let lineParts = line.split(" ");
+        // lineParts[0] = "<<<"
+        // lineParts[1] = elementID
+        // lineParts[2] = isStyled
+        // lineParts[3] = delay
+
+        // OR
+
+        // lineParts[1] = "DELAY"
+        // lineParts[2] = delayDuration in ms
+        
+        if(lineParts[1] === "DELAY"){
+            P.delay(parseInt(lineParts[2]));
+            return true;
+        }
+
+        state.element = document.getElementById(lineParts[1]);
+        state.isStyled = (lineParts[2] === "true" || lineParts[2] === "t");
+
+        switch(parseInt(lineParts[3])){
+            case 0:
+                state.delay = ultra;
+                break;
+            case 1:
+                state.delay = fast;
+                break;
+            case 2:
+                state.delay = normal;
+                break;
+            default:
+                state.delay = normal;
+                break;
+        }
+        return true;
+    }
+
+    return false;
 }
 
-async function WriteStyledChar(element, char, line){
+function WriteSimpleChar(char){
+    state.element.innerHTML += char;
+}
+
+async function WriteStyledChar(char){
 
     // add char to storages
     styledLineStorage += char;
@@ -423,13 +432,13 @@ async function WriteStyledChar(element, char, line){
     styledLineStorage = addStylingToStorage(styledLineStorage);
     
     // update what the user sees
-    element.innerHTML = styledLineStorage;
+    state.element.innerHTML = styledLineStorage;
 
     // when char is not alphanumeric, update the style tag
     // (Avoids flickers)
     if(!char.match(/[a-zA-Z0-9]/)){
         trueStyleElement.innerHTML = outputBuffer;
-        element.innerHTML = styledLineStorage;
+        state.element.innerHTML = styledLineStorage;
     }
 
 }

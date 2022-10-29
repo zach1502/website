@@ -1,6 +1,5 @@
 <html lang="en"><head>
     <meta charset="utf-8">
-    <link rel="icon" type="image/x-icon" href="icon.ico">
     <title> Zachary Chan | Resume </title>
     <style id="true-style">/* 
 * Hello! I'm Zachary Chan.
@@ -10,7 +9,8 @@
 * I'm a programmer. 
 * Currently, I'm trying out all sorts of stuff to see what I like.
 * This is my latest project, a website.
-* For the best experience, view on a desktop, full screen.
+*
+* FOR THE BEST EXPERIENCE, VIEW ON DESKTOP, FULL SCREENED
 */
 
 /*
@@ -44,8 +44,22 @@ border-radius: 5px;
 background-color: #222;
 color: white;
 overflow: auto;
-height: 90%;
-width: 45%;
+padding-bottom: 2em;
+}
+
+@media only screen and (min-width:769px){
+pre:not(:empty)  {
+    height: 85%;
+    width: 45%;
+}
+}
+
+@media only screen and (max-width: 768px) {
+pre:not(:empty) {
+    width: 95%;
+    height: 40%;
+    position: absolute;
+}
 }
 
 #styles  {
@@ -61,6 +75,7 @@ ul  {
 list-style: none;
 width: 100%;
 display: inline-block;
+overflow: auto;
 }
 
 li  {
@@ -114,11 +129,23 @@ color: rgb(147, 147, 251);
 * 
 */
 
+@media only screen and (min-width:769px){
 #styles  {
-transform: translateX(110%);
+    transform: translateX(110%);
 }
 #resume  {
-position: absolute;
+    position: absolute;
+}
+}
+
+@media only screen and (max-width: 768px) {
+#resume  {
+    transform: translateX(0%);
+}
+#styles  {
+    transform: translateX(0%);
+    bottom: 0;
+}
 }
 
 /*
@@ -151,6 +178,7 @@ display: none;
     <meta name="description" content="A resume site that builds itself in front of you">
     <meta name="keywords" content="resume, co-op, build, site, zach">
     <meta name="author" content="Zachary Chan">
+    <link rel="icon" type="image/x-icon" href="icon.ico">
 </head>
 <body>
     <iframe id="initial" title="" src="intro.css" style="display: none;"></iframe>
@@ -163,7 +191,8 @@ display: none;
 * I'm a programmer. 
 * Currently, I'm trying out all sorts of stuff to see what I like.
 * This is my latest project, a website.
-* For the best experience, view on a desktop, full screen.
+*
+* FOR THE BEST EXPERIENCE, VIEW ON DESKTOP, FULL SCREENED
 */</span>
 
 <span class="comment">/*
@@ -197,8 +226,22 @@ display: none;
 <span class="property">    background-color:</span> #<span class="number">222</span>;
 <span class="property">    color:</span> white;
 <span class="property">    overflow:</span> auto;
-<span class="property">    height:</span> <span class="number">90</span>%;
+<span class="property">    padding-bottom:</span> <span class="number">2</span>em;
+}
+
+@media only screen and (min-width:<span class="number">769</span>px){
+<span class="property">    pre:</span><span class="selector">not(:empty)  </span>{
+<span class="property">    height:</span> <span class="number">85</span>%;
 <span class="property">    width:</span> <span class="number">45</span>%;
+}
+}
+
+@media only screen and (max-width: <span class="number">768</span>px) {
+<span class="property">    pre:</span>not(:empty) {
+<span class="property">    width:</span> <span class="number">95</span>%;
+<span class="property">    height:</span> <span class="number">40</span>%;
+<span class="property">    position:</span> absolute;
+}
 }
 
 <span class="selector">#styles  </span>{
@@ -214,6 +257,7 @@ display: none;
 <span class="property">    list-style:</span> none;
 <span class="property">    width:</span> <span class="number">100</span>%;
 <span class="property">    display:</span> inline-block;
+<span class="property">    overflow:</span> auto;
 }
 
 <span class="selector">li  </span>{
@@ -267,11 +311,23 @@ display: none;
 * 
 */</span>
 
+@media only screen and (min-width:<span class="number">769</span>px){
 <span class="selector">#styles  </span>{
 <span class="property">    transform:</span> translateX(<span class="number">110</span>%);
 }
 <span class="selector">#resume  </span>{
 <span class="property">    position:</span> absolute;
+}
+}
+
+@media only screen and (max-width: <span class="number">768</span>px) {
+<span class="selector">#resume  </span>{
+<span class="property">    transform:</span> translateX(<span class="number">0</span>%);
+}
+<span class="selector">#styles  </span>{
+<span class="property">    transform:</span> translateX(<span class="number">0</span>%);
+<span class="property">    bottom:</span> <span class="number">0</span>;
+}
 }
 
 <span class="comment">/*
@@ -280,13 +336,13 @@ display: none;
 * Just one more thing! If you want, you can EDIT this website.
 * You can change the colours, the text, the code, the layout.
 * You can even break the website if you want!
-* Simply start typing in this window
+* Simply start typing in this window.
 *
 * If you have any questions, comments or concerns
 *
 * Feel free to contact me at:
-* Email: zca121@sfu.ca
-* Discord: zach1502#4621
+* Email: zca<span class="number">121</span>@sfu.ca
+* Discord: zach<span class="number">1502</span>#<span class="number">4621</span>
 * 
 * I'm always looking for new opportunities to learn and grow.
 * 
@@ -300,7 +356,7 @@ display: none;
 #skip {
 <span class="property">    display:</span> none;
 }<br></pre>
-        <pre id="resume">===================<br>Zachary Chan<br>===================<br>3rd year Computer Science Student at Simon Fraser University (SFU)<br>Seeking for 1st Co-op Term in Spring 2022<br><br>===================<br>Skills:<br>===================<br>Programming Languages: C/C++, Python, JavaScript, HTML, CSS, C#, RISC-V<br>Software: Visual Studio Code, Git, Unity, GoogleTest, Microsoft Office Suite<br>Human Languages: English, French, Mandarin<br>General: Creative, Fast learner, Communicative, Curious<br><br>===================<br>Personal Projects:<br>===================<br>This Website (JavaScript, HTML, CSS)<br>October 2022 - Present<br><br>Automatic UPass Registration (Python)<br>August 2022 - Present<br><br>Chess Engine Tournament (JavaScript and C++)<br>June 2022 - Sept 2022<br><br>Chess With Friends Discord Bot (JavaScript)<br>June 2022 - Sept 2022<br><br>Automated Crossword Puzzle Generator (Python)<br>May 2022 - June 2022<br><br>===================<br>Education:<br>===================<br>B.Sc Computer Science<br>Simon Fraser University<br>2022 - 2026<br>3.56/4.33 CGPA<br><br>Associate of Computer Science (Transferred)<br>Langara College<br>2020 - 2022<br>3.87/4.33 CGPA<br><br>===================<br>Interests:<br>===================<br>Programming<br>Participated in "A Strange Programming Competition"<br>Participated in "Fall Hacks 2022"<br><br>Chess<br>1900 Rapid, 1600 Blitz, 1150 Bullet, 2150 Puzzle on chess.com.<br><br>Finance<br>Self-directed investments. Took economics related electives.<br><br></pre>
+        <pre id="resume"><br>===================<br>Zachary Chan<br>===================<br>3rd year Computer Science Student at Simon Fraser University (SFU)<br>Seeking for 1st Co-op Term in Spring 2022<br><br>===================<br>Skills:<br>===================<br>Programming Languages: C/C++, Python, JavaScript, HTML, CSS, C#, RISC-V<br>Software: Visual Studio Code, Git, Unity, GoogleTest, Microsoft Office Suite<br>Human Languages: English, French, Mandarin<br>General: Creative, Fast learner, Communicative, Curious<br><br>===================<br>Personal Projects:<br>===================<br>This Website (JavaScript, HTML, CSS)<br>October 2022 - Present<br><br>Automatic UPass Registration (Python)<br>August 2022 - Present<br><br>Chess Engine Tournament (JavaScript and C++)<br>June 2022 - Sept 2022<br><br>Chess With Friends Discord Bot (JavaScript)<br>June 2022 - Sept 2022<br><br>Automated Crossword Puzzle Generator (Python)<br>May 2022 - June 2022<br><br>===================<br>Education:<br>===================<br>B.Sc Computer Science<br>Simon Fraser University<br>2022 - 2026<br>3.56/4.33 CGPA<br><br>Associate of Computer Science (Transferred)<br>Langara College<br>2020 - 2022<br>3.87/4.33 CGPA<br><br>===================<br>Interests:<br>===================<br>Programming<br>Participated in "A Strange Programming Competition"<br>Participated in "Fall Hacks 2022"<br><br>Chess<br>1900 Rapid, 1600 Blitz, 1150 Bullet, 2150 Puzzle on chess.com.<br><br>Finance<br>Self-directed investments. Took economics related electives.<br></pre>
     </div>
 
 <footer style="position:fixed; bottom:0px; left:0px; float:right;">
@@ -315,18 +371,9 @@ display: none;
             <a href="https://github.com/zach1502/"> GitHub </a>
         </li>
         <li>
-            <a href="./index.html" id="play"> Play Animation </a>
+            <a href="./index.html" id="replay"> Replay Animation </a>
         </li>
     </ul>
 </footer>
-<script>
-    const trueStyleElement = document.getElementById("true-style");
-    const stylesElement = document.getElementById("styles");
-    function AddEventListeners(){
-        stylesElement.addEventListener('input', function() {
-            trueStyleElement.textContent = stylesElement.textContent;
-        });
-    }
-    AddEventListeners();
-</script>
+<script type="module" src="bundle.js"></script>
 </body></html>

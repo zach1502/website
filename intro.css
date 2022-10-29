@@ -44,6 +44,10 @@ pre:not(:empty)  {
     width: 45%;
 }
 
+#styles  {
+    position: absolute;
+}
+
 /*
  * Let me fix this footer.
  * This has probably been bothering you for a while.
@@ -108,7 +112,6 @@ body  {
 
 #styles  {
     transform: translateX(110%);
-    position: absolute;
 }
 #resume  {
     position: absolute;

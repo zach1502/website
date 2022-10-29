@@ -44,37 +44,37 @@ async function StartAnimation(){
         lineCount++;
     }
 
-    while(lineCount <= 46){
+    while(lineCount <= 50){
         await WriteLine(lineList.shift(), stylesElement, true, fast);
         lineCount++;
     }
 
-    while(lineCount <= 51){
+    while(lineCount <= 55){
         await WriteLine(lineList.shift(), stylesElement, true, normal);
         lineCount++;
     }
 
-    while(lineCount <= 68){
+    while(lineCount <= 72){
         await WriteLine(lineList.shift(), stylesElement, true, fast);
         lineCount++;
     }
 
-    while(lineCount <= 75){
+    while(lineCount <= 79){
         await WriteLine(lineList.shift(), stylesElement, true, normal);
         lineCount++;
     }
 
-    while(lineCount <= 96){
+    while(lineCount <= 100){
         await WriteLine(lineList.shift(), stylesElement, true, ultra);
         lineCount++;
     }
 
-    while(lineCount <= 108){
+    while(lineCount <= 112){
         await WriteLine(lineList.shift(), stylesElement, true, normal);
         lineCount++;
     }
 
-    while(lineCount <= 116){
+    while(lineCount <= 119){
         await WriteLine(lineList.shift(), stylesElement, true, fast);
         lineCount++;
     }
@@ -82,7 +82,7 @@ async function StartAnimation(){
     P.delay(1000); // wait for the animation to finish
 
     // Entering into resume section
-    while(lineCount <= 174){
+    while(lineCount <= 177){
         await WriteLine(lineList.shift(), resumeElement, false, ultra);
         lineCount++;
     }

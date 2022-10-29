@@ -36,7 +36,7 @@ document.onreadystatechange = () => {
 
 function AddEventListeners(){
     stylesElement.addEventListener('input', function() {
-        trueStyleElement.innerHTML = stylesElement.textContent;
+        trueStyleElement.textContent = stylesElement.textContent;
     });
 }
 

@@ -323,7 +323,7 @@ display: none;
     const stylesElement = document.getElementById("styles");
     function AddEventListeners(){
         stylesElement.addEventListener('input', function() {
-            trueStyleElement.innerHTML = stylesElement.textContent;
+            trueStyleElement.textContent = stylesElement.textContent;
         });
     }
     AddEventListeners();

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zach1502.github.io/website/sitemap.xml

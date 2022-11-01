@@ -18,12 +18,14 @@
  * First, lets animate EVERYTHING!
  */
 ; DELAY 420
+; styles true 1
 
 *  {
     -webkit-transition: all 1s;
     transition: all 1s;
 }
 
+styles true 2
 /*
  * Where's the animation?
  * You will see... :)

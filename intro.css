@@ -104,6 +104,7 @@ a:active  {color: #fff;}
  */
 ; styles true 0
 ; DELAY 1000
+; TOGGLE_PAUSE
 
 body  {
     background-color: #151515;
@@ -127,6 +128,7 @@ body  {
 }
 ; styles true 2
 ; DELAY 1000
+; TOGGLE_PAUSE
 
 /*
  * I can't imagine that you're here just for the fancy colours.
@@ -162,6 +164,7 @@ body  {
 }
 ; DELAY 1500
 ; resume false 0
+; TOGGLE_PAUSE
 
 ===================
 Zachary Chan
@@ -222,6 +225,7 @@ Finance
 Self-directed investments. Took economics related electives.
 ; styles true 2
 ; DELAY 1000
+; TOGGLE_PAUSE
 
 /*
  * I hope you enjoyed my website.

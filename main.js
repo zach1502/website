@@ -133,6 +133,10 @@ function CheckIfSpecialCommand(line){
     return false;
 }
 
+function CheckIfTogglePause(command) {
+    return command === "TOGGLE_PAUSE";
+}
+
 function CheckIfDelayCommand(command){
     return command === "DELAY";
 }
@@ -141,7 +145,7 @@ function HandleTogglePauseCommand() {
     ignorePause = !ignorePause;
 }
 
-function HandleDelayCommand(delayDuration) {
+async function HandleDelayCommand(delayDuration) {
     P.delay(parseInt(delayDuration));
 }
 

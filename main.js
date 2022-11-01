@@ -13,6 +13,7 @@ const normal = (isDev) ? 0 : 40;
 const fast = (isDev) ? 0 : 5;
 const ultra = 0;
 const speechPause = 500;
+let ignorePause = false;
 
 // Storages
 let styledLineStorage = ""; // insert into body
@@ -86,7 +87,7 @@ async function WriteLine(line){
     for(let char of line){
         if(state.isStyled){
             WriteStyledChar(char);
-            if(char === '.' || char === '!'){
+            if(!ignorePause && (char === '.' || char === '!' || char === '?')){
                 await P.delay(speechPause);
             }
             else{
@@ -118,6 +119,9 @@ function CheckIfSpecialCommand(line){
         if(CheckIfDelayCommand(lineParts[1])){
             HandleDelayCommand(parseInt(lineParts[2]));
         }
+        else if(CheckIfTogglePause(lineParts[1])){
+            HandleTogglePauseCommand();
+        }
         else{
             // styling command
             HandleStylingCommand(lineParts);
@@ -131,6 +135,10 @@ function CheckIfSpecialCommand(line){
 
 function CheckIfDelayCommand(command){
     return command === "DELAY";
+}
+
+function HandleTogglePauseCommand() {
+    ignorePause = !ignorePause;
 }
 
 function HandleDelayCommand(delayDuration) {
@@ -183,29 +191,29 @@ async function WriteStyledChar(char){
 
 }
 
-function addStylingToStorage(styledLineStorage){
+function addStylingToStorage(lineStorage){
 
-    styledLineStorage = styledLineStorage.replace(selectComment, (match) => {
+    lineStorage = lineStorage.replace(selectComment, (match) => {
         return `<span class="comment">${match}</span>`;
     });
 
-    styledLineStorage = styledLineStorage.replace(selectNumber, (match) => {
+    lineStorage = lineStorage.replace(selectNumber, (match) => {
         return `<span class="number">${match}</span>`;
     });
 
-    // styledLineStorage = styledLineStorage.replace(selectCssValue, (match) => {
+    // lineStorage = lineStorage.replace(selectCssValue, (match) => {
     //     return `<span class="value">${match}</span>`;
     // });
 
-    styledLineStorage = styledLineStorage.replace(selectCssProperty, (match) => {
+    lineStorage = lineStorage.replace(selectCssProperty, (match) => {
         return `<span class="property">${match}</span>`;
     });
 
-    styledLineStorage = styledLineStorage.replace(selectCssSelector, (match) => {
+    lineStorage = lineStorage.replace(selectCssSelector, (match) => {
         return `<span class="selector">${match}</span>`;
     });
 
-    return styledLineStorage;
+    return lineStorage;
 }
 
 /*

@@ -25,7 +25,7 @@
     transition: all 1s;
 }
 
-styles true 2
+; styles true 2
 /*
  * Where's the animation?
  * You will see... :)
@@ -50,14 +50,14 @@ pre:not(:empty)  {
     padding-bottom: 2em;
 }
 
-@media only screen and (min-width:769px){
+@media only screen and (min-width:769px)  {
     pre:not(:empty)  {
         height: 85%;
         width: 45%;
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px)  {
     pre:not(:empty) {
         width: 95%;
         height: 40%;
@@ -146,7 +146,7 @@ body  {
 ; DELAY 420
 ; styles true 1
 
-@media only screen and (min-width:769px){
+@media only screen and (min-width:769px)  {
     #styles  {
         transform: translateX(110%);
     }
@@ -155,7 +155,7 @@ body  {
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px)  {
     #resume  {
         transform: translateX(0%);
     }
@@ -164,7 +164,7 @@ body  {
         bottom: 0;
     }
 }
-; DELAY 1500
+; DELAY 1000
 ; resume false 0
 ; TOGGLE_PAUSE
 

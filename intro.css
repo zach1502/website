@@ -10,14 +10,14 @@
  * FOR THE BEST EXPERIENCE, VIEW ON DESKTOP, FULL SCREENED
  */
 
-; DELAY 1000
+; DELAY 420
 /*
  * Oh... There's nothing here...                
  * Let me fix that.
  * 
  * First, lets animate EVERYTHING!
  */
-; DELAY 1000
+; DELAY 420
 
 *  {
     -webkit-transition: all 1s;
@@ -28,7 +28,7 @@
  * Where's the animation?
  * You will see... :)
  */
-; DELAY 1000
+; DELAY 420
 
 /*
  * Let me create some space to work with.
@@ -67,14 +67,14 @@ pre:not(:empty)  {
     position: absolute;
 }
 ; styles true 2
-; DELAY 1000
+; DELAY 420
 
 /*
  * Let me fix this footer.
  * This has probably been bothering you for a while.
  */
 ; styles true 0
-; DELAY 1000
+; DELAY 420
 
 ul  {
     list-style: none;
@@ -94,7 +94,7 @@ a:visited  {color: #fff;}
 a:link  {color: #fff;}
 a:active  {color: #fff;}
 ; styles true 2
-; DELAY 1000
+; DELAY 420
 
 /*
  * Not bad, if I do say so myself.
@@ -103,7 +103,7 @@ a:active  {color: #fff;}
  * ... Maybe a lot more colourful than an IDE ...
  */
 ; styles true 0
-; DELAY 1000
+; DELAY 420
 ; TOGGLE_PAUSE
 
 body  {
@@ -127,7 +127,7 @@ body  {
     color: rgb(147, 147, 251);
 }
 ; styles true 2
-; DELAY 1000
+; DELAY 420
 ; TOGGLE_PAUSE
 
 /*
@@ -141,7 +141,7 @@ body  {
  * The link to a version of my resume is at the bottom left.
  * 
  */
-; DELAY 1000
+; DELAY 420
 ; styles true 1
 
 @media only screen and (min-width:769px){
@@ -224,7 +224,7 @@ Chess
 Finance
 Self-directed investments. Took economics related electives.
 ; styles true 2
-; DELAY 1000
+; DELAY 420
 ; TOGGLE_PAUSE
 
 /*

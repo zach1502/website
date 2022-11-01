@@ -79,7 +79,7 @@ async function StartAnimation(){
 }
 
 async function WriteLine(line){
-    if(CheckIfSpecialCommand(line)){
+    if(await CheckIfSpecialCommand(line)){
         return;
     }
 
@@ -110,14 +110,14 @@ async function WriteLine(line){
     state.element.innerHTML += "<br>";
 }
 
-function CheckIfSpecialCommand(line){
+async function CheckIfSpecialCommand(line){
     // checks if a line starts with ;
     if(line[0]==';'){
         // change the state
         let lineParts = line.split(" ");
         
         if(CheckIfDelayCommand(lineParts[1])){
-            HandleDelayCommand(parseInt(lineParts[2]));
+            await HandleDelayCommand(parseInt(lineParts[2]));
         }
         else if(CheckIfTogglePause(lineParts[1])){
             HandleTogglePauseCommand();
@@ -146,7 +146,7 @@ function HandleTogglePauseCommand() {
 }
 
 async function HandleDelayCommand(delayDuration) {
-    P.delay(parseInt(delayDuration));
+    await P.delay(parseInt(delayDuration));
 }
 
 function HandleStylingCommand(lineParts) {

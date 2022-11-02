@@ -48,9 +48,6 @@ pre:not(:empty)  {
     color: white;
     overflow: auto;
     padding-bottom: 2em;
-    user-select: all;
-    -webkit-user-select: all;
-    -moz-user-select: all;
 }
 
 @media only screen and (min-width:769px)  {
@@ -70,6 +67,9 @@ pre:not(:empty)  {
 
 #styles  {
     position: absolute;
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
 }
 ; styles true 2
 ; DELAY 420

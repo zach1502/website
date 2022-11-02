@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en"><head>
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EJ4J9G467E"></script>
     <script>
@@ -54,19 +53,16 @@ background-color: #222;
 color: white;
 overflow: auto;
 padding-bottom: 2em;
-user-select: all;
--webkit-user-select: all;
--moz-user-select: all;
 }
 
-@media only screen and (min-width:769px)  {
+@media only screen and (min-width:769px) {
 pre:not(:empty)  {
     height: 85%;
     width: 45%;
 }
 }
 
-@media only screen and (max-width: 768px)  {
+@media only screen and (max-width: 768px) {
 pre:not(:empty) {
     width: 95%;
     height: 40%;
@@ -76,10 +72,13 @@ pre:not(:empty) {
 
 #styles  {
 position: absolute;
+user-select: text;
+-webkit-user-select: text;
+-moz-user-select: text;
 }
 
 /*
-* Let me fix this footer.
+* Let me fix this footer and add a nice background.
 * This has probably been bothering you for a while.
 */
 
@@ -96,10 +95,16 @@ display: inline;
 padding: 0px 10px;
 }
 
-a:hover  {color: #888;}
-a:visited  {color: #fff;}
-a:link  {color: #fff;}
-a:active  {color: #fff;}
+body  {
+background-color: #151515;
+color: white;
+font-size: 14px;
+}
+
+a:hover  {color: #888888;}
+a:visited  {color: #ffffff;}
+a:link  {color: #ffffff;}
+a:active  {color: #ffffff;}
 
 /*
 * Not bad, if I do say so myself.
@@ -108,11 +113,6 @@ a:active  {color: #fff;}
 * ... Maybe a lot more colourful than an IDE ...
 */
 
-body  {
-background-color: #151515;
-color: white;
-font-size: 14px;
-}
 .number  {
 color: rgb(33, 205, 79);
 }
@@ -128,6 +128,9 @@ color: rgb(72, 196, 231);
 .selector  {
 color: rgb(147, 147, 251);
 }
+.media {
+color: rgb(255, 89, 225);
+}
 
 /*
 * I can't imagine that you're here just for the fancy colours.
@@ -141,7 +144,7 @@ color: rgb(147, 147, 251);
 * 
 */
 
-@media only screen and (min-width:769px)  {
+@media only screen and (min-width:769px) {
 #styles  {
     transform: translateX(110%);
 }
@@ -150,7 +153,7 @@ color: rgb(147, 147, 251);
 }
 }
 
-@media only screen and (max-width: 768px)  {
+@media only screen and (max-width: 768px) {
 #resume  {
     transform: translateX(0%);
 }
@@ -183,7 +186,7 @@ color: rgb(147, 147, 251);
 * [END ANIMATION]
 */
 
-#skip {
+#skip  {
 display: none;
 }</style>
     <meta charset="utf-8">
@@ -209,15 +212,15 @@ display: none;
 */</span>
 
 <span class="comment">/*
-* Oh... There's nothing <span class="selector">here...  </span>              
+* Oh... There'<span class="selector">s nothing here...                </span>
 * Let me fix that.
 * 
 * First, lets animate EVERYTHING!
 */</span>
 
 <span class="selector">*  </span>{
-<span class="property">    -webkit-transition:</span> all <span class="number">1</span>s;
-<span class="property">    transition:</span> all <span class="number">1</span>s;
+<span class="property"><span class="selector">    </span>-webkit-transition:</span> all <span class="number">1</span>s;
+<span class="property"><span class="selector">    </span>transition:</span> all <span class="number">1</span>s;
 }
 
 <span class="comment">/*
@@ -232,60 +235,66 @@ display: none;
 */</span>
 
 <span class="selector">pre:not(:empty)  </span>{
-<span class="property">    padding:</span> <span class="number">1</span>em;
-<span class="property">    margin:</span> <span class="number">1</span>em;
-<span class="property">    border:</span> <span class="number">1</span>px solid #<span class="number">333</span>;
-<span class="property">    border-radius:</span> <span class="number">5</span>px;
-<span class="property">    background-color:</span> #<span class="number">222</span>;
-<span class="property">    color:</span> white;
-<span class="property">    overflow:</span> auto;
-<span class="property">    padding-bottom:</span> <span class="number">2</span>em;
-<span class="property">    user-select:</span> all;
-<span class="property">    -webkit-user-select:</span> all;
-<span class="property">    -moz-user-select:</span> all;
+<span class="property"><span class="selector">    </span>padding:</span> <span class="number">1</span>em;
+<span class="property"><span class="selector">    </span>margin:</span> <span class="number">1</span>em;
+<span class="property"><span class="selector">    </span>border:</span> <span class="number">1</span>px solid #<span class="number">333</span>;
+<span class="property"><span class="selector">    </span>border-radius:</span> <span class="number">5</span>px;
+<span class="property"><span class="selector">    </span>background-color:</span> #<span class="number">222</span>;
+<span class="property"><span class="selector">    </span>color:</span> white;
+<span class="property"><span class="selector">    </span>overflow:</span> auto;
+<span class="property"><span class="selector">    </span>padding-bottom:</span> <span class="number">2</span>em;
 }
 
-@media only screen and (min-width:<span class="number">769</span><span class="selector">px)  </span>{
-<span class="property">    pre:</span><span class="selector">not(:empty)  </span>{
-<span class="property">    height:</span> <span class="number">85</span>%;
-<span class="property">    width:</span> <span class="number">45</span>%;
-}
+<span class="media">@media</span> only screen and (min-width:<span class="number">769</span>px) {
+<span class="property"><span class="selector">    </span>pre:</span><span class="selector">not(:empty)  </span>{
+<span class="selector">    </span><span class="property"><span class="selector">    </span>height:</span> <span class="number">85</span>%;
+<span class="selector">    </span><span class="property"><span class="selector">    </span>width:</span> <span class="number">45</span>%;
+<span class="selector">    </span>}
 }
 
-@media only screen and (max-width: <span class="number">768</span><span class="selector">px)  </span>{
-<span class="property">    pre:</span>not(:empty) {
-<span class="property">    width:</span> <span class="number">95</span>%;
-<span class="property">    height:</span> <span class="number">40</span>%;
-<span class="property">    position:</span> absolute;
-}
+<span class="media">@media</span> only screen and (max-width: <span class="number">768</span>px) {
+<span class="property"><span class="selector">    </span>pre:</span>not(:empty) {
+<span class="selector">    </span><span class="property"><span class="selector">    </span>width:</span> <span class="number">95</span>%;
+<span class="selector">    </span><span class="property"><span class="selector">    </span>height:</span> <span class="number">40</span>%;
+<span class="selector">    </span><span class="property"><span class="selector">    </span>position:</span> absolute;
+<span class="selector">    </span>}
 }
 
 <span class="selector">#styles  </span>{
-<span class="property">    position:</span> absolute;
+<span class="property"><span class="selector">    </span>position:</span> absolute;
+<span class="property"><span class="selector">    </span>user-select:</span> text;
+<span class="property"><span class="selector">    </span>-webkit-user-select:</span> text;
+<span class="property"><span class="selector">    </span>-moz-user-select:</span> text;
 }
 
 <span class="comment">/*
-* Let me fix this footer.
+* Let me fix this footer and add a nice background.
 * This has probably been bothering you for a while.
 */</span>
 
 <span class="selector">ul  </span>{
-<span class="property">    list-style:</span> none;
-<span class="property">    width:</span> <span class="number">100</span>%;
-<span class="property">    display:</span> inline-block;
-<span class="property">    overflow:</span> auto;
+<span class="property"><span class="selector">    </span>list-style:</span> none;
+<span class="property"><span class="selector">    </span>width:</span> <span class="number">100</span>%;
+<span class="property"><span class="selector">    </span>display:</span> inline-block;
+<span class="property"><span class="selector">    </span>overflow:</span> auto;
 }
 
 <span class="selector">li  </span>{
-<span class="property">    font-family:</span> monospace, serif;
-<span class="property">    display:</span> inline;
-<span class="property">    padding:</span> <span class="number">0</span>px <span class="number">10</span>px;
+<span class="property"><span class="selector">    </span>font-family:</span> monospace, serif;
+<span class="property"><span class="selector">    </span>display:</span> inline;
+<span class="property"><span class="selector">    </span>padding:</span> <span class="number">0</span>px <span class="number">10</span>px;
 }
 
-<span class="selector">a:hover  </span>{color: #<span class="number">888</span>;}
-<span class="selector">a:visited  </span>{color: #fff;}
-<span class="selector">a:link  </span>{color: #fff;}
-<span class="selector">a:active  </span>{color: #fff;}
+<span class="selector">body  </span>{
+<span class="property"><span class="selector">    </span>background-color:</span> #<span class="number">151515</span>;
+<span class="property"><span class="selector">    </span>color:</span> white;
+<span class="property"><span class="selector">    </span>font-size:</span> <span class="number">14</span>px;
+}
+
+<span class="selector">a:hover  </span>{color: #<span class="number">888888</span>;}
+<span class="selector">a:visited  </span>{color: #ffffff;}
+<span class="selector">a:link  </span>{color: #ffffff;}
+<span class="selector">a:active  </span>{color: #ffffff;}
 
 <span class="comment">/*
 * Not bad, if I do say so myself.
@@ -294,25 +303,23 @@ display: none;
 * ... Maybe a lot more colourful than an IDE ...
 */</span>
 
-<span class="selector">body  </span>{
-<span class="property">    background-color:</span> #<span class="number">151515</span>;
-<span class="property">    color:</span> white;
-<span class="property">    font-size:</span> <span class="number">14</span>px;
-}
 <span class="selector">.number  </span>{
-<span class="property">    color:</span> rgb(<span class="number">33</span>, <span class="number">205</span>, <span class="number">79</span>);
+<span class="property"><span class="selector">    </span>color:</span> rgb(<span class="number">33</span>, <span class="number">205</span>, <span class="number">79</span>);
 }
 <span class="selector">.comment  </span>{
-<span class="property">    color:</span> rgb(<span class="number">224</span>, <span class="number">127</span>, <span class="number">0</span>);
+<span class="property"><span class="selector">    </span>color:</span> rgb(<span class="number">224</span>, <span class="number">127</span>, <span class="number">0</span>);
 }
 <span class="selector">.value  </span>{
-<span class="property">    color:</span> rgb(<span class="number">228</span>, <span class="number">64</span>, <span class="number">64</span>);
+<span class="property"><span class="selector">    </span>color:</span> rgb(<span class="number">228</span>, <span class="number">64</span>, <span class="number">64</span>);
 }
 <span class="selector">.property  </span>{
-<span class="property">    color:</span> rgb(<span class="number">72</span>, <span class="number">196</span>, <span class="number">231</span>);
+<span class="property"><span class="selector">    </span>color:</span> rgb(<span class="number">72</span>, <span class="number">196</span>, <span class="number">231</span>);
 }
 <span class="selector">.selector  </span>{
-<span class="property">    color:</span> rgb(<span class="number">147</span>, <span class="number">147</span>, <span class="number">251</span>);
+<span class="property"><span class="selector">    </span>color:</span> rgb(<span class="number">147</span>, <span class="number">147</span>, <span class="number">251</span>);
+}
+.media {
+<span class="property"><span class="selector">    </span>color:</span> rgb(<span class="number">255</span>, <span class="number">89</span>, <span class="number">225</span>);
 }
 
 <span class="comment">/*
@@ -327,23 +334,23 @@ display: none;
 * 
 */</span>
 
-@media only screen and (min-width:<span class="number">769</span><span class="selector">px)  </span>{
-<span class="selector">#styles  </span>{
-<span class="property">    transform:</span> translateX(<span class="number">110</span>%);
-}
-<span class="selector">#resume  </span>{
-<span class="property">    position:</span> absolute;
-}
+<span class="media">@media</span> only screen and (min-width:<span class="number">769</span>px) {
+<span class="selector">    #styles  </span>{
+<span class="selector">    </span><span class="property"><span class="selector">    </span>transform:</span> translateX(<span class="number">110</span>%);
+<span class="selector">    </span>}
+<span class="selector">    #resume  </span>{
+<span class="selector">    </span><span class="property"><span class="selector">    </span>position:</span> absolute;
+<span class="selector">    </span>}
 }
 
-@media only screen and (max-width: <span class="number">768</span><span class="selector">px)  </span>{
-<span class="selector">#resume  </span>{
-<span class="property">    transform:</span> translateX(<span class="number">0</span>%);
-}
-<span class="selector">#styles  </span>{
-<span class="property">    transform:</span> translateX(<span class="number">0</span>%);
-<span class="property">    bottom:</span> <span class="number">0</span>;
-}
+<span class="media">@media</span> only screen and (max-width: <span class="number">768</span>px) {
+<span class="selector">    #resume  </span>{
+<span class="selector">    </span><span class="property"><span class="selector">    </span>transform:</span> translateX(<span class="number">0</span>%);
+<span class="selector">    </span>}
+<span class="selector">    #styles  </span>{
+<span class="selector">    </span><span class="property"><span class="selector">    </span>transform:</span> translateX(<span class="number">0</span>%);
+<span class="selector">    </span><span class="property"><span class="selector">    </span>bottom:</span> <span class="number">0</span>;
+<span class="selector">    </span>}
 }
 
 <span class="comment">/*
@@ -369,10 +376,10 @@ display: none;
 * [END ANIMATION]
 */</span>
 
-#skip {
-<span class="property">    display:</span> none;
+<span class="selector">#skip  </span>{
+<span class="property"><span class="selector">    </span>display:</span> none;
 }<br></pre>
-        <pre id="resume"><br>===================<br>Zachary Chan<br>===================<br>3rd year Computer Science Student at Simon Fraser University (SFU)<br>Seeking for 1st Co-op Term in Spring 2022<br><br>===================<br>Skills:<br>===================<br>Programming Languages: C/C++, Python, JavaScript, HTML, CSS, C#, RISC-V<br>Software: Visual Studio Code, Git, Unity, GoogleTest, Microsoft Office Suite<br>Human Languages: English, French, Mandarin<br>General: Creative, Fast learner, Communicative, Curious<br><br>===================<br>Personal Projects:<br>===================<br>This Website (JavaScript, HTML, CSS)<br>October 2022 - Present<br><br>Automatic UPass Registration (Python)<br>August 2022 - Present<br><br>Chess Engine Tournament (JavaScript and C++)<br>June 2022 - Sept 2022<br><br>Chess With Friends Discord Bot (JavaScript)<br>June 2022 - Sept 2022<br><br>Automated Crossword Puzzle Generator (Python)<br>May 2022 - June 2022<br><br>===================<br>Education:<br>===================<br>B.Sc Computer Science<br>Simon Fraser University<br>2022 - 2026<br>3.56/4.33 CGPA<br><br>Associate of Computer Science (Transferred)<br>Langara College<br>2020 - 2022<br>3.87/4.33 CGPA<br><br>===================<br>Interests:<br>===================<br>Programming<br>Participated in "A Strange Programming Competition"<br>Participated in "Fall Hacks 2022"<br><br>Chess<br>1900 Rapid, 1600 Blitz, 1150 Bullet, 2150 Puzzle on chess.com.<br><br>Finance<br>Self-directed investments. Took economics related electives.<br></pre>
+        <pre id="resume">===================<br>Zachary Chan<br>===================<br>3rd year Computer Science Student at Simon Fraser University (SFU)<br>Seeking for 1st Co-op Term in Spring 2022<br><br>===================<br>Skills:<br>===================<br>Programming Languages: C/C++, Python, JavaScript, HTML, CSS, C#, RISC-V<br>Software: Visual Studio Code, Git, Unity, GoogleTest, Microsoft Office Suite<br>Human Languages: English, French, Mandarin<br>General: Creative, Fast learner, Communicative, Curious<br><br>===================<br>Personal Projects:<br>===================<br>This Website (JavaScript, HTML, CSS)<br>October 2022 - Present<br><br>Automatic UPass Registration (Python)<br>August 2022 - Present<br><br>Chess Engine Tournament (JavaScript and C++)<br>June 2022 - Sept 2022<br><br>Chess With Friends Discord Bot (JavaScript)<br>June 2022 - Sept 2022<br><br>Automated Crossword Puzzle Generator (Python)<br>May 2022 - June 2022<br><br>===================<br>Education:<br>===================<br>B.Sc Computer Science<br>Simon Fraser University<br>2022 - 2026<br>3.56/4.33 CGPA<br><br>Associate of Computer Science (Transferred)<br>Langara College<br>2020 - 2022<br>3.87/4.33 CGPA<br><br>===================<br>Interests:<br>===================<br>Programming<br>Participated in "A Strange Programming Competition"<br>Participated in "Fall Hacks 2022"<br><br>Chess<br>1900 Rapid, 1600 Blitz, 1150 Bullet, 2150 Puzzle on chess.com.<br><br>Finance<br>Self-directed investments. Took economics related electives.<br></pre>
     </div>
 
 <footer style="position:fixed; bottom:0px; left:0px; float:right;">
@@ -391,4 +398,16 @@ display: none;
         </li>
     </ul>
 </footer>
+<script>
+    let trueStyleElement = document.getElementById("true-style");
+    let stylesElement = document.getElementById("styles");
+
+    function AddEventListeners(){
+        stylesElement.addEventListener('input', function() {
+            trueStyleElement.textContent = stylesElement.textContent;
+        });
+    }
+
+    AddEventListeners();
+</script>
 </body></html>

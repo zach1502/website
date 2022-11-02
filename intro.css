@@ -48,6 +48,9 @@ pre:not(:empty)  {
     color: white;
     overflow: auto;
     padding-bottom: 2em;
+    user-select: all;
+    -webkit-user-select: all;
+    -moz-user-select: all;
 }
 
 @media only screen and (min-width:769px)  {

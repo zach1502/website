@@ -50,14 +50,14 @@ pre:not(:empty)  {
     padding-bottom: 2em;
 }
 
-@media only screen and (min-width:769px)  {
+@media only screen and (min-width:769px) {
     pre:not(:empty)  {
         height: 85%;
         width: 45%;
     }
 }
 
-@media only screen and (max-width: 768px)  {
+@media only screen and (max-width: 768px) {
     pre:not(:empty) {
         width: 95%;
         height: 40%;
@@ -75,10 +75,10 @@ pre:not(:empty)  {
 ; DELAY 420
 
 /*
- * Let me fix this footer.
+ * Let me fix this footer and add a nice background.
  * This has probably been bothering you for a while.
  */
-; styles true 0
+; styles true 1
 ; DELAY 420
 
 ul  {
@@ -94,10 +94,16 @@ li  {
     padding: 0px 10px;
 }
 
-a:hover  {color: #888;}
-a:visited  {color: #fff;}
-a:link  {color: #fff;}
-a:active  {color: #fff;}
+a:hover  {color: #888888;}
+a:visited  {color: #ffffff;}
+a:link  {color: #ffffff;}
+a:active  {color: #ffffff;}
+
+body  {
+    background-color: #151515;
+    color: white;
+    font-size: 14px;
+}
 ; styles true 2
 ; DELAY 420
 
@@ -107,15 +113,10 @@ a:active  {color: #fff;}
  * Let me add some color. How about something IDE like?
  * ... Maybe a lot more colourful than an IDE ...
  */
-; styles true 0
+; styles true 1
 ; DELAY 420
 ; TOGGLE_PAUSE
 
-body  {
-    background-color: #151515;
-    color: white;
-    font-size: 14px;
-}
 .number  {
     color: rgb(33, 205, 79);
 }
@@ -131,6 +132,9 @@ body  {
 .selector  {
     color: rgb(147, 147, 251);
 }
+.media  {
+    color: rgb(255, 89, 225);
+}
 ; styles true 2
 ; DELAY 420
 ; TOGGLE_PAUSE
@@ -142,14 +146,14 @@ body  {
  * About some of my work, projects and etc.
  * Let me prep a TL;DR of my resume for you.
  * 
- * Oh and just in case you didn't notice..
+ * Oh and just in case you didn't notice...
  * The link to a version of my resume is at the bottom left.
  * 
  */
 ; DELAY 420
 ; styles true 1
 
-@media only screen and (min-width:769px)  {
+@media only screen and (min-width:769px) {
     #styles  {
         transform: translateX(110%);
     }
@@ -158,7 +162,7 @@ body  {
     }
 }
 
-@media only screen and (max-width: 768px)  {
+@media only screen and (max-width: 768px) {
     #resume  {
         transform: translateX(0%);
     }
@@ -170,7 +174,6 @@ body  {
 ; DELAY 500
 ; resume false 0
 ; TOGGLE_PAUSE
-
 ===================
 Zachary Chan
 ===================
@@ -243,8 +246,10 @@ Self-directed investments. Took economics related electives.
  * If you have any questions, comments or concerns
  *
  * Feel free to contact me at:
+; TOGGLE_PAUSE
  * Email: zca121@sfu.ca
  * Discord: zach1502#4621
+; TOGGLE_PAUSE
  * 
  * I'm always looking for new opportunities to learn and grow.
  * 
@@ -255,6 +260,6 @@ Self-directed investments. Took economics related electives.
  * [END ANIMATION]
  */
 
-#skip {
+#skip  {
     display: none;
 }

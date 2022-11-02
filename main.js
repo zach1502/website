@@ -11,7 +11,7 @@ let trueStyleElement = document.getElementById("true-style");
 const isDev = window.location.hostname === '127.0.0.1';
 const normal = (isDev) ? 0 : 40;
 const fast = (isDev) ? 0 : 5;
-const ultra = 3;
+const ultra = 0;
 const speechPause = 500;
 let ignorePause = false;
 
@@ -24,7 +24,8 @@ const selectComment = /\/\*[^*]*\*+([^/*][^*]*\*+)*\//g;
 const selectNumber = /\d+/g;
 const selectCssProperty = / {4}[a-zA-Z-]+:/g;
 const selectCssValue = / .+;/g;
-const selectCssSelector = /[*#:\(\).a-zA-Z-]+  /g
+const selectCssSelector = /[* @#:\(\).a-zA-Z0-9-]+  /g
+const selectMedia = /@media/g;
 
 // State
 let state;
@@ -215,6 +216,10 @@ function addStylingToStorage(lineStorage){
 
     lineStorage = lineStorage.replace(selectCssSelector, (match) => {
         return `<span class="selector">${match}</span>`;
+    });
+
+    lineStorage = lineStorage.replace(selectMedia, (match) => {
+        return `<span class="media">${match}</span>`;
     });
 
     return lineStorage;

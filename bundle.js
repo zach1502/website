@@ -25,7 +25,8 @@ const selectComment = /\/\*[^*]*\*+([^/*][^*]*\*+)*\//g;
 const selectNumber = /\d+/g;
 const selectCssProperty = / {4}[a-zA-Z-]+:/g;
 const selectCssValue = / .+;/g;
-const selectCssSelector = /[*#:\(\).a-zA-Z-]+  /g
+const selectCssSelector = /[* @#:\(\).a-zA-Z0-9-]+  /g
+const selectMedia = /@media/g;
 
 // State
 let state;
@@ -216,6 +217,10 @@ function addStylingToStorage(lineStorage){
 
     lineStorage = lineStorage.replace(selectCssSelector, (match) => {
         return `<span class="selector">${match}</span>`;
+    });
+
+    lineStorage = lineStorage.replace(selectMedia, (match) => {
+        return `<span class="media">${match}</span>`;
     });
 
     return lineStorage;

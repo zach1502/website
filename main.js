@@ -11,7 +11,7 @@ let trueStyleElement = document.getElementById("true-style");
 const isDev = window.location.hostname === '127.0.0.1';
 const normal = (isDev) ? 0 : 40;
 const fast = (isDev) ? 0 : 5;
-const ultra = 0;
+const ultra = 3;
 const speechPause = 500;
 let ignorePause = false;
 

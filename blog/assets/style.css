@@ -1,0 +1,27 @@
+body  {
+    background-color: #151515;
+    color: white;
+    font-size: 14px;
+    font-family: monospace, serif;
+}
+
+div  {
+    padding: 1em;
+    margin: 1em;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #222;
+    color: white;
+    overflow: auto;
+    padding-bottom: 2em;
+}
+
+a:hover  {color: #888888;}
+a:visited  {color: #ffffff;}
+a:link  {color: #ffffff;}
+a:active  {color: #ffffff;}
+a {
+    font-family: monospace, serif;
+    display: inline;
+    padding: 0px 10px;
+}

@@ -1,4 +1,4 @@
-Resume Site
+Self Building Resume Site
 =========
 
 [View Site](https://zach1502.github.io/website/)
@@ -12,7 +12,3 @@ cd website
 npm install
 npm run test
 ```
-
-License
--------
-Please ask for permission before using any of the code in this repository.

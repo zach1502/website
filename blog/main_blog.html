@@ -20,24 +20,42 @@
     </head>
 
     <body>
+        <!-- top bit -->
         <div>
-            <!-- top bit -->
             <nav>
-                <a href="../index.html" id="main"> Main Page </a>
-                <a href="./blog/main_blog.html"> Blog </a>
-                <a href="./resume.docx" download> Download My Resume </a>
-                <a href="https://github.com/zach1502/website"> Source Code </a>
-                <a href="https://github.com/zach1502/"> GitHub </a>
+                <a href="../index.html" id="main"> Main Page</a>
+                <a href="./blog/main_blog.html"> Blog</a>
+                <a href="./resume.docx" download> Download My Resume</a>
+                <a href="https://github.com/zach1502/website"> Source Code</a>
+                <a href="https://github.com/zach1502/"> GitHub</a>
             </nav>
+        </div>
 
-            <!-- main content bit -->
-            <!-- 2 column asymetric -->
-            <div class="latest"> <!-- ~70% width  -->
+        <!-- main content -->
+        <!-- centered -->
+        <div>
+            <h1>Blog Posts</h1>
 
+            <div id="section">
+                <h2>Latest Post</h2>
+                <ul class="latest"> <!-- centered -->
+
+                </ul>
             </div>
-            <div class="featured"> <!-- ~30% width -->
+            <div id="section">
+                <h2>Older Posts</h2>
+                <ul class="older"> <!-- centered -->
 
+                </ul>
             </div>
         </div>
+
+        <!-- bottom bit -->
+        <div>
+            <footer>
+                &copy; 2022 Zachary Chan
+            </footer>
+        </div>
+        <script type="module" src="load_posts_bundle.js"></script>
     </body>
 </html>

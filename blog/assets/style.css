@@ -3,6 +3,22 @@ body  {
     color: white;
     font-size: 14px;
     font-family: monospace, serif;
+    margin: 0% 5%;
+    font-size: 14pt; 
+}
+
+h1, h2 {
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 36pt;
+    margin: 0;
+}
+
+h2 {
+    font-size: 26pt;
+    margin: 0;
 }
 
 div  {
@@ -13,7 +29,11 @@ div  {
     background-color: #222;
     color: white;
     overflow: auto;
-    padding-bottom: 2em;
+}
+div#section {
+    margin: 0;
+    margin-top: 1em;
+    border-color: #555;
 }
 
 a:hover  {color: #888888;}
@@ -24,4 +44,19 @@ a {
     font-family: monospace, serif;
     display: inline;
     padding: 0px 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    font-family: monospace, serif;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+ul li a {
+    padding: 0px;
 }

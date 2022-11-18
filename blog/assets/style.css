@@ -10,12 +10,10 @@ body  {
 h1, h2 {
     font-weight: normal;
 }
-
 h1 {
     font-size: 36pt;
     margin: 0;
 }
-
 h2 {
     font-size: 26pt;
     margin: 0;
@@ -50,13 +48,18 @@ ul {
     list-style-type: none;
     padding: 0;
 }
-
 ul li {
     font-family: monospace, serif;
     text-decoration: none;
     margin-top: 10px;
 }
-
 ul li a {
     padding: 0px;
+}
+
+iframe {
+    /* center the iframe */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

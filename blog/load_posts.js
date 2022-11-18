@@ -45,6 +45,7 @@ async function GetPosts(){
         });
     }
 
-    return posts
+    // by default in old to new order
+    return posts.reverse();
 }
 

@@ -39,13 +39,14 @@ async function GetPosts(){
         let file = files[file_index];
         const display_name = file.split('_')[1];
 
-        posts.push({
-            path: file,
+        // push to front of array
+        posts.unshift({
             display: display_name,
+            path: file
         });
     }
 
     // by default in old to new order
-    return posts.reverse();
+    return posts;
 }
 

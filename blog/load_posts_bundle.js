@@ -30,7 +30,7 @@ async function LoadPosts(){
 
 async function GetPosts(){
     // Get all html files in posts directory
-    const files = ["17-11-2022_Hello World! - About the Site_.html"];
+    const files = ["17-11-2022_Hello World! - About the Site_.html","18-11-2022_Midterm Flex Post_.html"];
     
     // parse the display name from the file name
     let posts = [];
@@ -40,14 +40,15 @@ async function GetPosts(){
         let file = files[file_index];
         const display_name = file.split('_')[1];
 
-        posts.push({
-            path: file,
+        // push to front of array
+        posts.unshift({
             display: display_name,
+            path: file
         });
     }
 
     // by default in old to new order
-    return posts.reverse();
+    return posts;
 }
 
 

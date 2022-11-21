@@ -30,7 +30,7 @@ async function LoadPosts(){
 
 async function GetPosts(){
     // Get all html files in posts directory
-    const files = ["17-11-2022_Hello World! - About the Site_.html","18-11-2022_Midterm Flex Post_.html"];
+    const files = ["17-11-2022_Hello World! - About the Site_.html","18-11-2022_CMPT 295 Flexpost_.html"];
     
     // parse the display name from the file name
     let posts = [];

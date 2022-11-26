@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Zachary Chan | Blog</title>
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EJ4J9G467E"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-EJ4J9G467E');
+        </script>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A resume site that builds itself in front of you">
+        <meta name="keywords" content="resume, co-op, build, site, zach, blog, self">
+        <meta name="author" content="Zachary Chan">
+        <link rel="icon" type="image/x-icon" href="../../icon.ico">
+        <link rel="stylesheet" href="../assets/style.css">
+    </head>
+
+    <body>
+        <!-- top bit -->
+        <div>
+            <nav>
+                <a href="../index.html" id="main"> Main Page</a>
+                <a href="../main_blog.html"> Blog</a>
+                <a href="./resume.docx" download> Download My Resume</a>
+                <a href="https://github.com/zach1502/website"> Source Code</a>
+                <a href="https://github.com/zach1502/"> GitHub</a>
+            </nav>
+        </div>
+
+        <!-- main content -->
+        <!-- centered -->
+        <div class="main-content">
+            <h1> 
+                Some Interviews Later | TaskTop and Clir Renewables
+            </h1>
+            <hr>
+            <span>Posted on November 26th, 2022</span>
+            <hr>
+
+            <h2>TASKTOP</h2>
+            <p>
+                I've had a few more interviews since my last post.
+                I've had one with TaskTop, and one with Clir Renewables.
+                I'll talk about both of them here.
+            </p>
+
+            <p>
+                TaskTop was a very interesting interview. I was interviewed by a really nice bearded fellow with a very nice voice.
+                No joke, he had a really nice voice. It was very soothing. He also has a british accent.
+            </p>
+
+            <p>
+                Most of the interview question was mostly about my experiences and projects. As expected.
+                Oddly, this interview was the first I've had where there was no technical question!
+                Well, there was one, but it was simply printing hello world in C++.
+            </p>
+
+            <p>
+                Despite that oddity, overall, the interview experience was really good.
+                I learnt a little bit about the fact that the OSI is a suggestion, not a rule. You can send tcp through layer 2 if you want!
+                He also recommended me to read the AGILE manifesto, which I have done and found to be interesting. Apparently, there are many variations of AGILE.
+                This interview had to be the most relaxed interview I've had so far. 
+            </p>
+
+            <h2> Clir Renewables </h2>
+            <p>
+                My interview with Clir Renewables was a more traditional interview. I was interviewed by a nice lady as well as a handsome gent.
+            </p>
+            <p>
+                As usual, the interview went about like most of my other interviews. I was asked to introduce myself.
+                Then answer some behavioral and value questions. Then a technical question.
+                I do not think I explained myself well when performing the technical bit. 
+                I'm normally not very lucid with my words and honestly, I do not think I did well in that department.
+            </p>
+            <p>
+                So, I would like to focus on the technical question. How I reached my answer, improvements I spotted while I was answering, and how I would answer it now.
+            </p>
+            
+            <h3> The Question </h3>
+            <blockquote>
+                "Given an array of strings words and an integer k, return the k most frequent strings.
+                Return the answer sorted by the frequency from highest to lowest.
+                Sort the words with the same frequency by their lexicographical order."
+            </blockquote>
+
+            <h3> The Thought </h3>
+            <p>
+                Instantaneously, I recognize that a hashmap would be needed to store the frequency of each word. Since we need something that acts like a set and store an associated value.
+                However, I didn't say that immediately.
+                I had a thought that my first thought isn't good enough, thinking about what would happen after I've stored the frequency of each word.
+                The rest of the steps seem kind of slow to me and I'm not sure if it's the best way to do it.
+                So I tried to think up a better solution.
+                I thought of using a priority queue, because it would be a good way to sort the words by frequency.
+                The issue with that is that I didn't remember if priority queues allowed for a lambda function and I was also considering time complexity.
+                Priority queues are O(log n) for insertion and O(1) for removal while hashmaps are O(1) for insertion and O(1) for removal.
+            </p>
+
+            <p>
+                I felt I took too long thinking so I just basically said "Ight, I'll use a hashmap" and then I went on to explain how I would use a hashmap and got coding.
+            </p>
+
+            <p>
+                So this hashmap would contain std::pair&lt;string, int&gt;s with the string being the word and the int being the frequency.
+                I couldn't remember what was the map's default value so I simply assumed it was undefined/garbage.
+                With that assumption, I set a word to 1 then increment it.
+            </p>
+
+            <p>
+                Next up is sorting the pairs. I thought okay, simple. I need to move all the pairs into a vector and then sort the vector.
+                So now, let me tell you about an amazing thing. Library functions. The best thing ever.
+
+                I used std::sort to sort the vector. But I sort of forgot how to use it. So I had to come up with some C-like psuedocode.
+                (Its fine since they said it didn't need to be runnable).
+                I know now that I can use a lambda function. Which is quite powerful.
+            </p>
+
+            <p>
+                after that, I moved all the pairs into a vector and then erased the elements beyond the kth element.
+                Then I moved all the elements into a vector and returned it.
+
+                This solution was time complexity O(n * log n) with memory complexity of O(n).
+            </p>
+
+            <h3> The Improvements </h3>
+
+            <p> So after I was done, I was asked. What are some improvements that you can make here.</p>
+            <p> 
+                I already knew where my errors were because it felt clunky when I was thinking about it. 
+                I pointed to somewhere around the erase and a vector creation.
+                "There's likely an optimization here because I do not think it is necessary to create 2 vectors. 
+                It could save some memory and a bit of time. It won't change the complexity but it will make it more efficient."
+            </p>
+            <p>
+                I asked about the optimal solution to this question after the interview. I was told that It was basically as good as it can be.
+            </p>
+
+            <h3> The New Answer </h3>
+            <p> After the interview I worked on making the code actually work and this is what I got: </p>
+            <pre>
+vector&lt;string&gt; main(vector&lt;string&gt;& words, int k) {
+    unordered_map&lt;string, int&gt; mp;
+    
+    for(auto word: words){
+        mp[word]++;
+    }
+    
+    vector&lt;pair&lt;string, int&gt;&gt; v;
+    for(auto pairEl: mp){
+        v.emplace_back(pairEl);
+    }
+        
+    std::sort(v.begin(), v.end(), [](pair&lt;string, int&gt; a, pair&lt;string, int&gt; b){
+        if(a.second == b.second){
+            return a.first &lt; b.first;
+        }
+        return a.second &gt; b.second;
+    });
+    
+    vector&lt;string&gt; result;
+    for(int i = 0; i &lt; k; i++){
+        result.emplace_back(v[i].first);
+    }
+    
+    
+    return result;
+}
+            </pre>
+            <p>
+                I tested this with some extreme cases and regular cases with words and k and it works fine.
+                It is definitely an improvement to the one I gave in the interview.
+            </p>
+            <p>
+                You may notice something weird, why emplace_back instead of push_back? 
+                push_back creates a copy of the element and then moves it into the vector.
+                emplace_back mostly does the same thing as push_back but it is more performant because it does not create redundant copies.
+            </p>
+            <p>
+                you may also notice that I used a lambda function in std::sort. std::sort is a library function that normally sorts using the less than operator.
+                However, you can put in a lambda function to sort by a different criteria. Which is what I wrote in psuedocode during the interview.
+                I had to look up documetation to refresh my memory on lambdas.
+            </p>
+            <p>
+                This is about it for this post. I hope you enjoyed it.
+                I will be starting to prepare for finals instead of interviews and projects so I will dip in activity.
+            </p>
+            <p>
+                I also have a new upcomming project that I planned to be comming out soon after finals. To impress an interviewer and recruiter, that is probably you!
+            </p>
+
+        </div>
+
+        <!-- bottom bit -->
+        <div>
+            <footer>
+                &copy; 2022 Zachary Chan
+            </footer>
+        </div>
+    </body>
+</html>

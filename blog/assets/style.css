@@ -69,3 +69,12 @@ figcaption {
     margin-bottom: 1em;
     font-size: 12pt;
 }
+
+pre:not(:empty)  {
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #222;
+    color: white;
+    overflow: auto;
+    padding: 1em;
+}

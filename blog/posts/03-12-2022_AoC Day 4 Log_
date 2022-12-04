@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Zachary Chan | Blog</title>
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EJ4J9G467E"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-EJ4J9G467E');
+        </script>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A resume site that builds itself in front of you">
+        <meta name="keywords" content="resume, co-op, build, site, zach, blog, self">
+        <meta name="author" content="Zachary Chan">
+        <link rel="icon" type="image/x-icon" href="../../icon.ico">
+        <link rel="stylesheet" href="../assets/style.css">
+    </head>
+
+    <body>
+        <!-- top bit -->
+        <div>
+            <nav>
+                <a href="../index.html" id="main"> Main Page</a>
+                <a href="../main_blog.html"> Blog</a>
+                <a href="./resume.docx" download> Download My Resume</a>
+                <a href="https://github.com/zach1502/website"> Source Code</a>
+                <a href="https://github.com/zach1502/"> GitHub</a>
+            </nav>
+        </div>
+
+        <!-- main content -->
+        <!-- centered -->
+        <div class="main-content">
+            <h1> 
+                Pairs and Ranges | AoC Day 4
+            </h1>
+            <hr>
+            <span>Posted on December 3rd, 2022</span>
+            <hr>
+            <p>
+                Today's question was about taking a list with 2 pairs of numbers on each lines.
+                The first 2 numbers represent the first range. and the second 2 numbers represent the second range.
+                The question was to find the number of lines that had one of the ranges completely inside the other range.
+                For example, 4-5,1-10 would be line we would count. 4-5,2-4 would not be counted.
+            </p>
+            <p>
+                The approach is straightforward, read in a line with stringstream. Make 4 variables, to store the 2 ranges.
+                I named the numbers a and b for the first range, and c and d for the second range.
+                I then checked if a is less than or equal to c, and b is greater than or equal to d or a is greater than or equal to c, and b is less than or equal to d.
+                Or in english, if range 1 is a subset of range 2 or the other way around.
+            </p>
+            <p>
+                Part 2's twist was that you will now have to consider partial overlaps.
+                So, 4-5,2-4 would now be counted.
+            </p>
+            <p>
+                I simply appended a bit of code that checks for c being between a and b, or d being between a and b and a being between c and d, or b being between c and d.
+                And BAM! that's it.
+            </p>
+            <p>
+                Part 1 took an alright 15:33 minutes to complete thus getting me rank 7345. Part 2 took 18:23 minutes to complete thus getting me rank 6128.
+            </p>
+            <p>
+                I am now 13th on the Computer Science Student Society (CSSS) leaderboard, up from 14th.
+                There are now 104 people in leaderboard, 
+                
+            </p>
+        </div>
+
+        <!-- bottom bit -->
+        <div>
+            <footer>
+                &copy; 2022 Zachary Chan
+            </footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Zachary Chan | Blog</title>
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EJ4J9G467E"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-EJ4J9G467E');
+        </script>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A resume site that builds itself in front of you">
+        <meta name="keywords" content="resume, co-op, build, site, zach, blog, self">
+        <meta name="author" content="Zachary Chan">
+        <link rel="icon" type="image/x-icon" href="../../icon.ico">
+        <link rel="stylesheet" href="../assets/style.css">
+    </head>
+
+    <body>
+        <!-- top bit -->
+        <div>
+            <nav>
+                <a href="../index.html" id="main"> Main Page</a>
+                <a href="../main_blog.html"> Blog</a>
+                <a href="./resume.docx" download> Download My Resume</a>
+                <a href="https://github.com/zach1502/website"> Source Code</a>
+                <a href="https://github.com/zach1502/"> GitHub</a>
+            </nav>
+        </div>
+
+        <!-- main content -->
+        <!-- centered -->
+        <div class="main-content">
+            <h1> 
+                Rope & a Simple Processor | AoC Day 9 & 10
+            </h1>
+            <hr>
+            <span>Posted on December 10th, 2022</span>
+            <hr>
+            <p>
+                During the last 2 days, I had my finals which I will briefly talk about in a later post.
+                On day 10, I couldn't start on time because I had my final at 7-10 pm.
+            </p>
+            <p>
+                Day 8's part 1 was to find out how many unique spaces the tail of a rope would touch. 
+                This rope is of length one, if the Head and Tail of the rope is too far apart, the tail of the rope will have to catch up with the head.
+                I used a set and a struct to store the coordinates of the tail and the head of the rope.
+                I also created a function that will check for the head and tail distance and adjust the tail accordingly.
+
+                After that, I just looped through the instructions and added the tail's position to the set.
+            </p>
+            <p>
+                Part 2's twist was that now, we want to manipulate a rope of length 10 instead of length 1.
+                Luckily, my original solution was flexible enough to incorporate this with little effort.
+                I changed my tail to be an array of 9 structs and I now loop through each pair of rope segments and do the same thing as if it was a single rope segment.
+                What I've essentially done is use 10 ropes of length 1 to simulate a rope of length 10.
+            </p>
+            <p>
+                Part 1 took a recorded time of 20:30 (Rank 2046) and part 2 took 22:32 (Rank 633).
+            </p>
+            <p>
+                My second sub-1000 rank! 
+            </p>
+
+            <p>
+                Day 10's part 1 was about parsing instructions from a simple processor. This processor has 2 instructions: noop and addX.
+                noop does nothing and takes 1 cycle to execute, addX adds a number to X and takes 2 cycles. X is a register that starts at 1.
+                The instructions are given in a file and the goal is to find out how the value of X at the 20, 60, 100, 140, 180 and 220th cycles.
+                With these values, return the product of the cycle number and the value of X.
+            </p>
+            <p>
+                I used a vector to store the the values of X at each cycle. I then followed the instructions and added the values to the vector.
+                pushing the value of X to the vector at each cycle. A very simple start.
+            </p>
+
+            <p>
+                This is the coolest Part 2 so far. Part 2's twist is now we are instructed that the X register controls the horizontal position of a "sprite".
+                This sprite is 3 pixels wide and X is the middle pixel. The cycle number is where we are drawing. If the sprite and the cycle number overlaps, we draw a pixel.
+                Otherwise we don't. The goal is to figure out what message was encoded in our starting instructions.
+            </p>
+            <p>
+                I used 2 loops to represent the cycle number. the outerloop was for the vertical position would the inner loop was for the horizontal position.
+                I then used a nested loop to check if the sprite and the cycle number overlaps. If it does, I draw a pixel (a # for me).
+                Otherwise it draws in a ' ' to the console. This wasn't hard but it was amazing to see the message appear in front of me.
+                How did they automate making unique puzzle imputs for this?
+            </p>
+            <p>
+                Part 1 took a time of 4:30:26 (Rank 21289) and part 2 took 4:34:40 (Rank 17268).
+                It was done as soon as I could after my final.
+                Coincidentally, my final was about the Risc-V processor, pipelining and caches.
+            </p>
+            <p>
+                I am still 10th on the Computer Science Student Society (CSSS) leaderboard.
+                I lost a little bit of ground but I am still in the top 10.
+                There are now 106 people in leaderboard.
+            </p>
+        </div>
+
+        <!-- bottom bit -->
+        <div>
+            <footer>
+                &copy; 2022 Zachary Chan
+            </footer>
+        </div>
+    </body>
+</html>

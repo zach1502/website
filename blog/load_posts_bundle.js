@@ -30,7 +30,7 @@ async function LoadPosts(){
 
 async function GetPosts(){
     // Get all html files in posts directory
-    const files = ["10-12-2022_AoC Day 11 & 12.html","2022-11-17_Hello World! - About the Site_.html","2022-11-18_CMPT 295 Flexpost_.html","2022-11-21_An Interesting Interview Question_.html","2022-11-26_Some Interviews Later_.html","2022-11-30_Advent Of Code Starts!_.html","2022-12-01_AoC Day 2 Log_.html","2022-12-02_AoC Day 3 Log_.html","2022-12-03_AoC Day 4 Log_","2022-12-04_AoC Day 5 Log_.html","2022-12-05_AoC Day 6 Log_.html","2022-12-08_AoC Day 7 & 8 Log_.html","2022-12-10_AoC Day 9 & 10 Log_.html"];
+    const files = ["2022-11-17_Hello World! - About the Site_.html","2022-11-18_CMPT 295 Flexpost_.html","2022-11-21_An Interesting Interview Question_.html","2022-11-26_Some Interviews Later_.html","2022-11-30_Advent Of Code Starts!_.html","2022-12-01_AoC Day 2 Log_.html","2022-12-02_AoC Day 3 Log_.html","2022-12-03_AoC Day 4 Log_","2022-12-04_AoC Day 5 Log_.html","2022-12-05_AoC Day 6 Log_.html","2022-12-08_AoC Day 7 & 8 Log_.html","2022-12-10_AoC Day 9 & 10 Log_.html","2022-12-12_AoC Day 11 & 12 Log_.html"];
     
     // parse the display name from the file name
     let posts = [];
@@ -38,6 +38,7 @@ async function GetPosts(){
     // date_display_.html
     for(let file_index in files){
         let file = files[file_index];
+        console.log(file);
         const display_name = file.split('_')[1];
 
         // push to front of array

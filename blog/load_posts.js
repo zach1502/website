@@ -37,6 +37,7 @@ async function GetPosts(){
     // date_display_.html
     for(let file_index in files){
         let file = files[file_index];
+        console.log(file);
         const display_name = file.split('_')[1];
 
         // push to front of array

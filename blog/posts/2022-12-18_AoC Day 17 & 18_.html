@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Zachary Chan | Blog</title>
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EJ4J9G467E"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-EJ4J9G467E');
+        </script>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A resume site that builds itself in front of you">
+        <meta name="keywords" content="resume, co-op, build, site, zach, blog, self">
+        <meta name="author" content="Zachary Chan">
+        <link rel="icon" type="image/x-icon" href="../../icon.ico">
+        <link rel="stylesheet" href="../assets/style.css">
+    </head>
+
+    <body>
+        <!-- top bit -->
+        <div>
+            <nav>
+                <a href="../index.html" id="main"> Main Page</a>
+                <a href="../main_blog.html"> Blog</a>
+                <a href="./resume.docx" download> Download My Resume</a>
+                <a href="https://github.com/zach1502/website"> Source Code</a>
+                <a href="https://github.com/zach1502/"> GitHub</a>
+            </nav>
+        </div>
+
+        <!-- main content -->
+        <!-- centered -->
+        <div class="main-content">
+            <h1> 
+                Tetris with Wind and Lava droplets | AoC Day 17 & 18
+            </h1>
+            <hr>
+            <span>Posted on December 18th, 2022</span>
+            <hr>
+            <p>
+
+            </p>
+            <p>
+                Day 17 was about finding the height of a very precariously built tower of blocks of certain shapes.
+            </p>
+            <p>
+                There are 5 blocks that will fall down, a 4x1 flat stick, a 3x3 cross, a backwards 3x3 L, a 1x4 stick and a 2x2 square.
+                These blocks will fall down in that order 1 by 1 and will get affected by wind currents.
+                The play area is 7 units wide.
+                Each block will start such that its left edge is 2 units away from the left edge of the play area and its bottom edge is 3 units above the highest block currently.
+                while the block can fall, it will first be affected by wind then by gravity.
+            </p>
+            <p>
+                Part 1 asks what is the height of the tower after 2022 blocks have fallen.
+            </p>
+            <p>
+                Step one is to build the environment.
+                I decided to use a set to represent the play area, I figured it would make placing and calculating shape positions easier than using a 2D vector.
+                I then ran a couple of test runs on the test input to make sure that my code was working.
+            </p>
+            <p>
+                Step two is to build the blocks.
+                I decided to use a vector of pairs to represent the blocks.
+                Each element of the vector represents the 2D location of a block.
+            </p>
+            <p>
+                With that in place, I created 5 separate functions to represent the 5 blocks.
+                Since the checks for each block are different, I decided to separate them.
+                it will pass by reference the grid so it can write straight into the grid.
+                After putting it all into a while-loop, I ran it and bam it worked.
+            </p>
+            <p>
+                Part 2's twist was that now we must find the height after 10^12 blocks (or 1 trillion blocks) have fallen.
+            </p>
+            <p>
+                Clearly, brute forcing this is not an option.
+                So I thought, about how I could optimize this and I realized that staring at the horizontal bar piece.
+                It effectively acts as a barrier and could split the play area into sections.
+                With that in mind, I decided to try and implement cycle detection.
+            </p>
+            <p>
+                With some thought, I decided to use a map to store a 10 row chunk of the play area every 5 blocks placed.
+                The number of rows is arbitrary, but its a nice round number and significantly long that false positives are unlikely.
+            </p>
+            <p>
+                Actually calculating the exact height took a bit of manual work with a calculator because I don't have a big int class.
+                When it detects a cycle, I printed the current height and block #, where the pattern started height and block # and the cycle length.
+                This was sufficient information to calculate the exact height at 10^12 blocks.
+            </p>
+            <p>
+                Part 1 took a time of 49:35 (Rank 948) and part 2 took 1:15:56 (Rank 581).
+                This day is my personal favourite so far. It is pretty simple and I really enjoyed discovering the solution.
+            </p>
+
+            <p>
+                Day 18 was about the surface area of a geometric shape made up of unit cubes.
+            </p>
+            <p>
+                we are given a list of strings that contain a comma separated x, y, z triplet. 
+            </p>
+            <p>
+                Part 1 simply asks for the total surface area of the shape.
+            </p>
+            <p>
+                This was a pretty simple problem. I used a vector to store the points and then iterated through the vector to calculate the surface area.
+                Checking +1 and -1 in each direction and incrementing each time there was nothing there.
+            </p>
+            <p>
+                Part 2 now asks for the outside, non enclosed surface area. A small adjustment.
+                I first bounded the shape by finding the min and max x, y and z values.
+                Then I performed a flood fill and incrementing where ever it touches the surface.
+            </p>
+            <p>
+                Part 1 took a time of 7:19 (Rank 870) and part 2 took 22:35 (Rank 575).
+                Honestly, this day felt really good after I was done part 1 and 2.
+                I thought I was fast enough to be on the global leaderboard given the time it took the previous few quesitons
+                but I was short by about 10 minutes.
+            </p>
+            <p>
+                I am still 6th on the Computer Science Student Society (CSSS) leaderboard.
+                The gap to 5th is 79 points and the gap to 7th is 88 points.
+                There is now 109 people in leaderboard.
+            </p>
+        </div>
+
+        <!-- bottom bit -->
+        <div>
+            <footer>
+                &copy; 2022 Zachary Chan
+            </footer>
+        </div>
+    </body>
+</html>

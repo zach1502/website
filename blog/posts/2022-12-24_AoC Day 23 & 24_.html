@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Zachary Chan | Blog</title>
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EJ4J9G467E"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-EJ4J9G467E');
+        </script>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A resume site that builds itself in front of you">
+        <meta name="keywords" content="resume, co-op, build, site, zach, blog, self">
+        <meta name="author" content="Zachary Chan">
+        <link rel="icon" type="image/x-icon" href="../../icon.ico">
+        <link rel="stylesheet" href="../assets/style.css">
+    </head>
+
+    <body>
+        <!-- top bit -->
+        <div>
+            <nav>
+                <a href="../index.html" id="main"> Main Page</a>
+                <a href="../main_blog.html"> Blog</a>
+                <a href="./resume.docx" download> Download My Resume</a>
+                <a href="https://github.com/zach1502/website"> Source Code</a>
+                <a href="https://github.com/zach1502/"> GitHub</a>
+            </nav>
+        </div>
+
+        <!-- main content -->
+        <!-- centered -->
+        <div class="main-content">
+            <h1> 
+                Paths & more Paths | AoC Day 23 & 24
+            </h1>
+            <hr>
+            <span>Posted on December 24th, 2022</span>
+            <hr>
+            <p>
+                Day 23 has a bunch of elves standing in a rectangle. We just have to simulate how they move around as they follow certain instructions.
+            </p>
+            <p>
+               Up on the grid is North. We have a certain number of rounds. In the first half of each round, each elf in this grid considers the contents of the 8 adjacent squares.
+               If there's no other elves, then the elf will stay in place. Otherwise, the elf will inspect the 3 squares for each cardinal directions in this order: N, S, W, E.
+               It will propose to move in the first cardinal direction that has 0 elves.
+            </p>
+            <p>
+                After each Elf has proposed a destination tile, all elves move to their destination tiles at the same time.
+                If more than one elf has proposed to move to the same tile, they all do not move.
+                Finally, the first direction the elves considered is moved to the end of the list of directions.
+            </p>
+            <p>
+                Part 1's goal is to find the area of the smallest bounding box that contains all the elves after 10 rounds.
+            </p>
+            <p>
+                I created a few data structures to sotre various information about the elves and the grid.
+                First a set that contains coordinates, this contains the elves positions.
+                Second a map that maps coordinates to a vector of coordinates, this contains the elves' proposed moves stored as destination square to source.
+                Third a vector containing all movement directions.
+            </p>
+            <p>
+                With that done, I looped through the number of rounds and for each round, I looped through each elf and checked if they have a proposed move.
+                If they do, I add it to the map. Then, I rotate the movement order.
+                I then checked proposed moves and if there was exactly 1 elf proposing to move to a square, I moved the elf there. Otherwise the elves don't move.
+                I cleared the proposed moves map and that was it! I looped it 10 times and printed the area of the smallest bounding box.
+            </p>
+            <p>
+                Part 2's twist was that now we need to figure out for how many iterations do we need to do before all the elves stop moving.
+                I simply added a boolean that switches if one of the elves have a proposed move. While it is true, the elves are still moving.
+                So when it is false, I printed the iteration number +1 and that was it!
+            </p>
+            <p>
+                Part 1 took a time of 30:39 (Rank 381) and part 2 took 30:50 (Rank 244).
+            </p>
+            <p>
+                Day 24 was about traversing a map, with some blizzards chilling around. 
+                These blizzards have a certain direction and starting point. 
+                We just can't walk on them. If the blizzards hit a wall, they warp 
+            </p>
+            <p>
+                Part 1's goal is to find the number of steps it takes to reach the target location from the starting location.
+            </p>
+            <p>
+                This was basically A* with a slight twist. 
+                All I had to do was that in addition to A*, I removed squares from the queue if they were blizzards. 
+                That was basically it.
+            </p>
+            <p>
+                Part 2's twist is simple. We now need the number of steps from the starting location to the target location then back to the starting location then back to the target location.
+            </p>
+            <p>
+                I just had to run A* thrice... I mean. Yea. That was it.
+            </p>
+            <p>
+                Part 1 took a time of 3:08:45  (Rank 2944) and part 2 took 3:12:08 (Rank 2707).
+                I went and celebrated Christmas with my family so rank was higher than usual.
+            </p>
+        </div>
+
+        <!-- bottom bit -->
+        <div>
+            <footer>
+                &copy; 2022 Zachary Chan
+            </footer>
+        </div>
+    </body>
+</html>

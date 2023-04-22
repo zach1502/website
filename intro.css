@@ -1,11 +1,13 @@
 /* 
  * Hello! I'm Zachary Chan.
  * A 3rd year computer science student at Simon Fraser University.
- * I am seeking for my first Co-op term.
+ * I am seeking for my second Co-op term.
  * 
  * I'm a programmer. 
  * Currently, I'm trying out all sorts of stuff to see what I like.
- * This is my latest project, a website.
+ * This is one of my favourite projects, a website that I made.
+ *
+ * If you're a boring person, you can press the skip button at the bottom-left.
  *
  * FOR THE BEST EXPERIENCE, VIEW ON DESKTOP, FULL SCREENED
  */
@@ -18,7 +20,7 @@
  * First, lets animate EVERYTHING!
  */
 ; DELAY 420
-; styles true 1
+; styles true 0
 
 *  {
     -webkit-transition: all 1s;
@@ -37,7 +39,7 @@
  *
  * AND I SAY, "LET THERE BE A GRAY BOX AND WHITE TEXT!"
  */
-; styles true 1
+; styles true 0
 
 pre:not(:empty)  {
     padding: 1em;
@@ -55,7 +57,7 @@ pre:hover  {
 
 @media only screen and (min-width:769px) {
     pre:not(:empty)  {
-        height: 85%;
+        height: 80%;
         width: 45%;
     }
 }
@@ -78,10 +80,12 @@ pre:hover  {
 ; DELAY 420
 
 /*
- * Let me fix this footer and add a nice background.
- * This has probably been bothering you for a while.
+ * Oh EWWWW.
+ *
+ * My links are covering up this beautiful text and box.
+ * Let me fix this and make it not bother us.
  */
-; styles true 1
+; styles true 0
 ; DELAY 420
 
 ul  {
@@ -102,11 +106,49 @@ a:visited  {color: #ffffff;}
 a:link  {color: #ffffff;}
 a:active  {color: #ffffff;}
 
+; styles true 2
+; DELAY 420
+/*
+ * Much better, don't you think?
+ * Now let me style the background and really make the site pop!
+ */
+; styles true 0
+; DELAY 420
+
 body  {
     background-color: #151515;
     color: white;
     font-size: 14px;
 }
+
+h1  {
+    font-size: 2em;
+    font-weight: bold;
+    margin-left: 29px;
+    margin-bottom: 0px;
+    padding: 0;
+}
+
+/* Customize scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+::-webkit-scrollbar-track {
+    background-color: #222;
+    border-radius: 5px;
+  }
+  
+::-webkit-scrollbar-thumb {
+    background-color: #444;
+    border-radius: 5px;
+  }
+  
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
 ; styles true 2
 ; DELAY 420
 
@@ -116,7 +158,7 @@ body  {
  * Let me add some color. How about something IDE like?
  * ... Maybe a lot more colourful than an IDE ...
  */
-; styles true 1
+; styles true 0
 ; DELAY 420
 ; TOGGLE_PAUSE
 
@@ -154,7 +196,7 @@ body  {
  * 
  */
 ; DELAY 420
-; styles true 1
+; styles true 0
 
 @media only screen and (min-width:769px) {
     #styles  {
@@ -181,15 +223,7 @@ body  {
 Zachary Chan
 ===================
 3rd year Computer Science Student at Simon Fraser University (SFU)
-Seeking for 1st Co-op Term in Spring 2022
-
-===================
-Skills:
-===================
-Programming Languages: C/C++, Python, JavaScript, HTML, CSS, C#, RISC-V
-Software: Visual Studio Code, Git, Unity, GoogleTest, Microsoft Office Suite
-Human Languages: English, French, Mandarin
-General: Creative, Fast learner, Communicative, Curious
+Seeking for 2nd Co-op Term in Fall 2023
 
 ===================
 Personal Projects:
@@ -197,8 +231,11 @@ Personal Projects:
 This Website (JavaScript, HTML, CSS)
 October 2022 - Present
 
+Chess AI using Monte Carlo Tree Search and Deep Neural Networks (Python)
+February 2023 - Present
+
 Automatic UPass Registration (Python)
-August 2022 - Present
+August 2022 - October 2023
 
 Chess Engine Tournament (JavaScript and C++)
 June 2022 - Sept 2022
@@ -215,22 +252,32 @@ Education:
 B.Sc Computer Science
 Simon Fraser University
 2022 - 2026
-3.56/4.33 CGPA
+3.72 CGPA
 
 Associate of Computer Science (Transferred)
 Langara College
 2020 - 2022
-3.87/4.33 CGPA
+3.87 CGPA
+
+===================
+Skills:
+===================
+Programming Languages: C/C++, Python, JavaScript, HTML, CSS, C#, RISC-V
+Software: Visual Studio Code, Git, Unity, GoogleTest, Microsoft Office Suite
+Human Languages: English, French, Mandarin
+General: Creative, Fast learner, Communicative, Curious
 
 ===================
 Interests:
 ===================
 Programming
-Participated in "A Strange Programming Competition"
-Participated in "Fall Hacks 2022"
+Participated in “A Strange Programming Competition”
+Participated in “Fall Hacks 2022”
+Participated in “New Year's MASH Programming Contest”
+Qualified for the “ICPC Pacific NorthWest Regional Programming Contest”
 
 Chess
-1900 Rapid, 1600 Blitz, 1150 Bullet, 2150 Puzzle on chess.com.
+2000 Rapid, 1700 Blitz, 1250 Bullet, 2250 Puzzle on chess.com.
 
 Finance
 Self-directed investments. Took economics related electives.

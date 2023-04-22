@@ -10,49 +10,52 @@
     <title> Zachary Chan | Resume </title>
 
     <style id="true-style">/* 
-* Hello! I'm Zachary Chan.
-* A 3rd year computer science student at Simon Fraser University.
-* I am seeking for my first Co-op term.
-* 
-* I'm a programmer. 
-* Currently, I'm trying out all sorts of stuff to see what I like.
-* This is my latest project, a website.
-*
-* FOR THE BEST EXPERIENCE, VIEW ON DESKTOP, FULL SCREENED
-*/
+/* 
+ * Hello! I'm Zachary Chan.
+ * A 3rd year computer science student at Simon Fraser University.
+ * I am seeking for my second Co-op term.
+ * 
+ * I'm a programmer. 
+ * Currently, I'm trying out all sorts of stuff to see what I like.
+ * This is one of my favourite projects, a website that I made.
+ *
+ * If you're a boring person, you can press the skip button at the bottom-left.
+ *
+ * FOR THE BEST EXPERIENCE, VIEW ON DESKTOP, FULL SCREENED
+ */
 
 /*
-* Oh... There's nothing here...                
-* Let me fix that.
-* 
-* First, lets animate EVERYTHING!
-*/
+ * Oh... There's nothing here...                
+ * Let me fix that.
+ * 
+ * First, lets animate EVERYTHING!
+ */
 
 *  {
--webkit-transition: all 1s;
-transition: all 1s;
+    -webkit-transition: all 1s;
+    transition: all 1s;
 }
 
 /*
-* Where's the animation?
-* You will see... :)
-*/
+ * Where's the animation?
+ * You will see... :)
+ */
 
 /*
-* Let me create some space to work with.
-*
-* AND I SAY, "LET THERE BE A GRAY BOX AND WHITE TEXT!"
-*/
+ * Let me create some space to work with.
+ *
+ * AND I SAY, "LET THERE BE A GRAY BOX AND WHITE TEXT!"
+ */
 
 pre:not(:empty)  {
-padding: 1em;
-margin: 1em;
-border: 1px solid #333;
-border-radius: 5px;
-background-color: #222;
-color: white;
-overflow: auto;
-padding-bottom: 2em;
+    padding: 1em;
+    margin: 1em;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #222;
+    color: white;
+    overflow: auto;
+    padding-bottom: 2em;
 }
 
 pre:hover  {
@@ -60,49 +63,45 @@ pre:hover  {
 }
 
 @media only screen and (min-width:769px) {
-pre:not(:empty)  {
-    height: 85%;
-    width: 45%;
-}
+    pre:not(:empty)  {
+        height: 83%;
+        width: 45%;
+    }
 }
 
 @media only screen and (max-width: 768px) {
-pre:not(:empty) {
-    width: 95%;
-    height: 40%;
-    position: absolute;
-}
+    pre:not(:empty) {
+        width: 95%;
+        height: 40%;
+        position: absolute;
+    }
 }
 
 #styles  {
-position: absolute;
-user-select: text;
--webkit-user-select: text;
--moz-user-select: text;
+    position: absolute;
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
 }
 
 /*
-* Let me fix this footer and add a nice background.
-* This has probably been bothering you for a while.
-*/
+ * Oh EWWWW.
+ *
+ * My links are covering up this beautiful text and box.
+ * Let me fix this and make it not bother us.
+ */
 
 ul  {
-list-style: none;
-width: 100%;
-display: inline-block;
-overflow: auto;
+    list-style: none;
+    width: 100%;
+    display: inline-block;
+    overflow: auto;
 }
 
 li  {
-font-family: monospace, serif;
-display: inline;
-padding: 0px 10px;
-}
-
-body  {
-background-color: #151515;
-color: white;
-font-size: 14px;
+    font-family: monospace, serif;
+    display: inline;
+    padding: 0px 10px;
 }
 
 a:hover  {color: #888888;}
@@ -111,87 +110,129 @@ a:link  {color: #ffffff;}
 a:active  {color: #ffffff;}
 
 /*
-* Not bad, if I do say so myself.
-* But it feels a bit bland and empty. Doesn't it?
-* Let me add some color. How about something IDE like?
-* ... Maybe a lot more colourful than an IDE ...
-*/
+ * Much better, don't you think?
+ * Now let me style the background and really make the site pop!
+ */
+
+body  {
+    background-color: #151515;
+    color: white;
+    font-size: 14px;
+}
+
+h1  {
+    font-size: 2em;
+    font-weight: bold;
+    margin-left: 29px;
+    margin-bottom: 0px;
+    padding: 0;
+}
+
+/* Customize scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+::-webkit-scrollbar-track {
+    background-color: #222;
+    border-radius: 5px;
+  }
+  
+::-webkit-scrollbar-thumb {
+    background-color: #444;
+    border-radius: 5px;
+  }
+  
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+
+/*
+ * Not bad, if I do say so myself.
+ * But it feels a bit bland and empty. Doesn't it?
+ * Let me add some color. How about something IDE like?
+ * ... Maybe a lot more colourful than an IDE ...
+ */
 
 .number  {
-color: rgb(33, 205, 79);
+    color: rgb(33, 205, 79);
 }
 .comment  {
-color: rgb(224, 127, 0);
+    color: rgb(224, 127, 0);
 }
 .value  {
-color: rgb(228, 64, 64);
+    color: rgb(228, 64, 64);
 }
 .property  {
-color: rgb(72, 196, 231);
+    color: rgb(72, 196, 231);
 }
 .selector  {
-color: rgb(147, 147, 251);
+    color: rgb(147, 147, 251);
 }
-.media {
-color: rgb(255, 89, 225);
+.media  {
+    color: rgb(255, 89, 225);
 }
 
 /*
-* I can't imagine that you're here just for the fancy colours.
-*
-* You probably want to know a little more about me.
-* About some of my work, projects and etc.
-* Let me prep a TL;DR of my resume for you.
-* 
-* Oh and just in case you didn't notice..
-* The link to a version of my resume is at the bottom left.
-* 
-*/
+ * I can't imagine that you're here just for the fancy colours.
+ *
+ * You probably want to know a little more about me.
+ * About some of my work, projects and etc.
+ * Let me prep a TL;DR of my resume for you.
+ * 
+ * Oh and just in case you didn't notice...
+ * The link to a version of my resume is at the bottom left.
+ * 
+ */
 
 @media only screen and (min-width:769px) {
-#styles  {
-    transform: translateX(110%);
-}
-#resume  {
-    position: absolute;
-}
+    #styles  {
+        transform: translateX(110%);
+    }
+    #resume  {
+        position: absolute;
+    }
 }
 
 @media only screen and (max-width: 768px) {
-#resume  {
-    transform: translateX(0%);
-}
-#styles  {
-    transform: translateX(0%);
-    bottom: 0;
-}
+    #resume  {
+        transform: translateX(0%);
+    }
+    #styles  {
+        transform: translateX(0%);
+        bottom: 0;
+    }
 }
 
 /*
-* I hope you enjoyed my website.
-*
-* Just one more thing! If you want, you can EDIT this website.
-* You can change the colours, the text, the code, the layout.
-* You can even break the website if you want!
-* Simply start typing in this window.
-*
-* If you have any questions, comments or concerns
-*
-* Feel free to contact me at:
-* Email: zca121@sfu.ca
-* Discord: zach1502#4621
-* 
-* I'm always looking for new opportunities to learn and grow.
-* 
-* Thank you for your time and I hope you are impressed!
-* 
-* - Zachary Chan
-*
-* [END ANIMATION]
-*/
+ * I hope you enjoyed my website.
+ *
+ * Just one more thing! If you want, you can EDIT this website.
+ * You can change the colours, the text, the code, the layout.
+ * You can even break the website if you want!
+ * Simply start typing in this window.
+ *
+ * If you have any questions, comments or concerns
+ *
+ * Feel free to contact me at:
+; TOGGLE_PAUSE
+ * Email: zca121@sfu.ca
+ * Discord: zach1502#4621
+; TOGGLE_PAUSE
+ * 
+ * I'm always looking for new opportunities to learn and grow.
+ * 
+ * Thank you for your time and I hope you are impressed!
+ * 
+ * - Zachary Chan
+ *
+ * [END ANIMATION]
+ */
 
 #skip  {
-display: none;
+    display: none;
 }</style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -201,6 +242,7 @@ display: none;
     <link rel="icon" type="image/x-icon" href="icon.ico">
 </head>
 <body>
+    <h1> Zachary Chan </h1>
     <iframe id="initial" title="" src="intro.css" style="display: none;"></iframe>
     <div id="content" spellcheck="false">
         <pre id="styles" contenteditable=""><span class="comment">/* 
@@ -212,7 +254,7 @@ display: none;
 * Currently, I'm trying out all sorts of stuff to see what I like.
 * This is one of my favourite projects, a website that I made.
 *
-* If you're a boring person, you can press the skip button at the bottom.
+* If you're a boring person, you can press the skip button at the bottom-left.
 *
 * FOR THE BEST EXPERIENCE, VIEW ON DESKTOP, FULL SCREENED
 */</span>
@@ -256,7 +298,7 @@ display: none;
 
 <span class="media">@media</span> only screen and (min-width:<span class="number">769</span>px) {
 <span class="property"><span class="selector">    </span>pre:</span><span class="selector">not(:empty)  </span>{
-<span class="selector">    </span><span class="property"><span class="selector">    </span>height:</span> <span class="number">85</span>%;
+<span class="selector">    </span><span class="property"><span class="selector">    </span>height:</span> <span class="number">80</span>%;
 <span class="selector">    </span><span class="property"><span class="selector">    </span>width:</span> <span class="number">45</span>%;
 <span class="selector">    </span>}
 }
@@ -277,8 +319,10 @@ display: none;
 }
 
 <span class="comment">/*
-* Let me fix this footer and add a nice background.
-* This has probably been bothering you for a while.
+* Oh EWWWW.
+*
+* My links are covering up this beautiful text and box.
+* Let me fix this and make it not bother us.
 */</span>
 
 <span class="selector">ul  </span>{
@@ -299,11 +343,45 @@ display: none;
 <span class="selector">a:link  </span>{color: #ffffff;}
 <span class="selector">a:active  </span>{color: #ffffff;}
 
+<span class="comment">/*
+* Much better, don't you think?
+* Now let me style the background and really make the site pop!
+*/</span>
+
 <span class="selector">body  </span>{
 <span class="property"><span class="selector">    </span>background-color:</span> #<span class="number">151515</span>;
 <span class="property"><span class="selector">    </span>color:</span> white;
 <span class="property"><span class="selector">    </span>font-size:</span> <span class="number">14</span>px;
 }
+
+h<span class="number">1</span>  {
+<span class="property"><span class="selector">    </span>font-size:</span> <span class="number">2</span>em;
+<span class="property"><span class="selector">    </span>font-weight:</span> bold;
+<span class="property"><span class="selector">    </span>margin-left:</span> <span class="number">29</span>px;
+<span class="property"><span class="selector">    </span>margin-bottom:</span> <span class="number">0</span>px;
+<span class="property"><span class="selector">    </span>padding:</span> <span class="number">0</span>;
+}
+
+<span class="comment">/* Customize scrollbar */</span>
+::-webkit-scrollbar {
+<span class="property"><span class="selector">    </span>width:</span> <span class="number">8</span>px;
+<span class="property"><span class="selector">    </span>height:</span> <span class="number">8</span>px;
+}
+
+::-webkit-scrollbar-track {
+<span class="property"><span class="selector">    </span>background-color:</span> #<span class="number">222</span>;
+<span class="property"><span class="selector">    </span>border-radius:</span> <span class="number">5</span>px;
+}
+
+::-webkit-scrollbar-thumb {
+<span class="property"><span class="selector">    </span>background-color:</span> #<span class="number">444</span>;
+<span class="property"><span class="selector">    </span>border-radius:</span> <span class="number">5</span>px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+<span class="property"><span class="selector">    </span>background-color:</span> #<span class="number">555</span>;
+}
+
 
 <span class="comment">/*
 * Not bad, if I do say so myself.

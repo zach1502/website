@@ -57,7 +57,7 @@ pre:hover  {
 
 @media only screen and (min-width:769px) {
     pre:not(:empty)  {
-        height: 80%;
+        height: 83%;
         width: 45%;
     }
 }

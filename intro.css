@@ -1,4 +1,7 @@
 /* 
+ * <<< DON'T LEAVE RIGHT AWAY OR ELSE YOU'RE MISSING OUT! >>>
+ *
+ *
  * Hello! I'm Zachary Chan.
  * A 4th year computer science student at Simon Fraser University.
  * I am seeking for my second Co-op term.
@@ -50,7 +53,9 @@ pre:not(:empty)  {
     color: white;
     overflow: auto;
     padding-bottom: 2em;
+    white-space: pre-wrap;
 }
+
 pre:hover  {
     box-shadow: 0px 0px 30px 5px rgba(255,255,255,0.4);
 }
@@ -64,8 +69,8 @@ pre:hover  {
 
 @media only screen and (max-width: 768px) {
     pre:not(:empty) {
-        width: 95%;
-        height: 40%;
+        width: 85vw;
+        height: 40vh;
         position: absolute;
     }
 }
@@ -192,7 +197,8 @@ h1  {
  * Let me prep a TL;DR of my resume for you.
  * 
  * Oh and just in case you didn't notice...
- * The link to a version of my resume is at the bottom left.
+ * The link to my master resume is at the bottom left.
+ * It includes all of my work experience, education, skills, etc.
  * 
  */
 ; DELAY 420
@@ -213,7 +219,7 @@ h1  {
     }
     #styles  {
         transform: translateX(0%);
-        bottom: 0;
+        bottom: 2em;
     }
 }
 ; DELAY 500
@@ -222,14 +228,36 @@ h1  {
 ===================
 Zachary Chan
 ===================
-3rd year Computer Science Student at Simon Fraser University (SFU)
-Seeking for 2nd Co-op Term in Fall 2023
+4th year Computer Science Student at Simon Fraser University (SFU)
+Seeking for 2nd Co-op Term
 
 ===================
 Personal Projects:
 ===================
 This Website (JavaScript, HTML, CSS)
 October 2022 - Present
+
+Peak Buddies: Speed Networking App (MERN Stack, Socket.io, Javascript)
+🏆 Mountain Madness 2024 Winner 🏆
+April 2024 - April 2024
+
+Statistical Analysis of SFU CSSS Discord Server (Python, Pandas, Numpy, Matplotlib)
+March 2024 - April 2024
+
+Asynchronous, Multi-threaded C++ Server (C++, Boost, Networking)
+January 2024 - February 2024
+
+Algorithmic Trading with LSTM (Python, PyTorch, Pandas, NumPy)
+December 2023 - January 2024
+
+Custom Malloc and Free Implementation (C)
+November 2023 - November 2023
+
+Simple Chat Application (C, Posix Threads, TCP Sockets)
+October 2023 - October 2023
+
+Sorting Algorithm Visualization Tool (Node.js, Javascript, React)
+August 2023 - October 2023
 
 Gesture Genius: Real Time ASL-to-English translator website (Javascript)
 September 2023 - September 2023
@@ -258,31 +286,40 @@ Education:
 B.Sc Computer Science
 Simon Fraser University
 2022 - 2026 (expected graduation)
-3.75 CGPA
+3.79 CGPA
 
 Associate of Computer Science (Transferred)
 Langara College
 2020 - 2022
-3.87 CGPA
+3.66 CGPA
 
 ===================
 Skills:
 ===================
-Programming Languages: C/C++, Python, JavaScript, HTML, CSS, C#, RISC-V
-Software: Visual Studio Code, Git, Unity, GoogleTest, Microsoft Office Suite
+Programming Languages: C/C++, Python, JavaScript, HTML, CSS, SQL
+Frameworks & Libraries: React, Node.js, Express, Material-UI, PyTorch, Pandas, NumPy, Matplotlib
+Developer Tools: Git, AWS (API Gateway, DynamoDB, Lambda, S3, Scheduler, TimeStream), GCP
+Soft Skills: Effective Communication, Problem-Solving, Team Collaboration, Adaptability, Creativity
 Human Languages: English, French, Mandarin
-General: Creative, Fast learner, Communicative, Curious
+
+===================
+Competitions and Hackathons: 
+===================
+A Strange Programming Contest 2023, Simon Fraser University - 2nd Place
+A Strange Programming Contest 2022, Simon Fraser University - 5th Place
+New Year's MASH Programming Contest 2022, Simon Fraser University - 8th Place
+ICPC Pacific NorthWest Regional Programming Contest 2022, Division 2 - Placed 16th out of 61 teams
+ICPC Pacific NorthWest Regional Programming Contest 2023, Division 2 - Placed 17th out of 76 teams
+Advent of Code 2023, Online - Placed 122nd out of 316,118 global participants
+Advent of Code 2022, Online - Completed
+
+Mountain Madness 2024, Simon Fraser University - 1st Place
+Hack The North 2023, University of Waterloo - Participant
+Fall Hacks 2022, Simon Fraser University - Participant
 
 ===================
 Interests:
 ===================
-Programming
-Placed 8th in “New Year’s MASH Programming Contest 2022“
-Placed 16th in “ICPC Pacific NorthWest Regional Programming Contest 2022”
-Placed 5th in “A Strange Programming Contest 2022”
-
-Participated in Hackathons such as “Hack The North 2023” and “Fall Hacks 2022”.
-
 Chess
 2000 Rapid, 1700 Blitz, 1250 Bullet, 2250 Puzzle on chess.com.
 
